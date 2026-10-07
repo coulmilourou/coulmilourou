@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="463" viewBox="0 0 900 463" role="img" aria-label="Console Cisco IOS : configuration de VLAN, trunk, routage inter-VLAN, relais DHCP, NAT et routes">
+<style>
+.m{font-family:ui-monospace,SFMono-Regular,"Cascadia Code",Consolas,Menlo,"DejaVu Sans Mono",monospace;font-size:14px}
+.pr{fill:#3fb950;font-weight:700}.cm{fill:#e6edf3}.co{fill:#6e7681;font-style:italic}.ok{fill:#3fb950}
+.ln{opacity:0;animation:show .01s forwards}@keyframes show{to{opacity:1}}
+.cur{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.ln{animation:none;opacity:1}.cur{animation:none}}
+</style>
+<rect x="1" y="1" width="898" height="461" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+<path d="M1 13a12 12 0 0 1 12-12h874a12 12 0 0 1 12 12v23H1z" fill="#161b22"/><line x1="1" y1="36" x2="899" y2="36" stroke="#30363d"/>
+<circle cx="22" cy="18.5" r="6" fill="#ff5f56"/><circle cx="42" cy="18.5" r="6" fill="#ffbd2e"/><circle cx="62" cy="18.5" r="6" fill="#27c93f"/>
+<text x="450" y="23" text-anchor="middle" class="m" style="font-size:13px" fill="#8b949e">console · Cisco IOS · 9600 8N1</text>
+<text x="24" y="62" class="m ln" style="animation-delay:0.65s" xml:space="preserve"><tspan class="co">! ── switch de niveau 3 : VLAN, trunk, routage inter-VLAN ──</tspan></text>
+<text x="24" y="83" class="m ln" style="animation-delay:1.10s" xml:space="preserve"><tspan class="pr">SW-CORE(config)#</tspan><tspan class="cm"> vlan 10</tspan></text>
+<text x="24" y="104" class="m ln" style="animation-delay:1.55s" xml:space="preserve"><tspan class="pr">SW-CORE(config-vlan)#</tspan><tspan class="cm"> name LAN1</tspan></text>
+<text x="24" y="125" class="m ln" style="animation-delay:2.00s" xml:space="preserve"><tspan class="pr">SW-CORE(config)#</tspan><tspan class="cm"> interface g1/0/24</tspan></text>
+<text x="24" y="146" class="m ln" style="animation-delay:2.45s" xml:space="preserve"><tspan class="pr">SW-CORE(config-if)#</tspan><tspan class="cm"> switchport mode trunk</tspan></text>
+<text x="24" y="167" class="m ln" style="animation-delay:2.90s" xml:space="preserve"><tspan class="pr">SW-CORE(config-if)#</tspan><tspan class="cm"> switchport trunk native vlan 99</tspan></text>
+<text x="24" y="188" class="m ln" style="animation-delay:3.35s" xml:space="preserve"><tspan class="pr">SW-CORE(config-if)#</tspan><tspan class="cm"> switchport trunk allowed vlan 10,20,30,50</tspan></text>
+<text x="24" y="209" class="m ln" style="animation-delay:3.80s" xml:space="preserve"><tspan class="pr">SW-CORE(config)#</tspan><tspan class="cm"> ip routing</tspan></text>
+<text x="24" y="230" class="m ln" style="animation-delay:4.25s" xml:space="preserve"><tspan class="pr">SW-CORE(config)#</tspan><tspan class="cm"> interface vlan 20</tspan></text>
+<text x="24" y="251" class="m ln" style="animation-delay:4.70s" xml:space="preserve"><tspan class="pr">SW-CORE(config-if)#</tspan><tspan class="cm"> ip address 172.16.255.254 255.255.0.0</tspan></text>
+<text x="24" y="272" class="m ln" style="animation-delay:5.15s" xml:space="preserve"><tspan class="pr">SW-CORE(config-if)#</tspan><tspan class="cm"> ip helper-address 192.168.1.10</tspan></text>
+<text x="24" y="293" class="m ln" style="animation-delay:5.50s" xml:space="preserve"><tspan class="co">! ── routeur de bordure : NAT/PAT, redirection de port, route par défaut ──</tspan></text>
+<text x="24" y="314" class="m ln" style="animation-delay:5.95s" xml:space="preserve"><tspan class="pr">R-EDGE(config)#</tspan><tspan class="cm"> ip nat inside source list 1 interface g0/1 overload</tspan></text>
+<text x="24" y="335" class="m ln" style="animation-delay:6.40s" xml:space="preserve"><tspan class="pr">R-EDGE(config)#</tspan><tspan class="cm"> ip nat inside source static tcp 192.168.1.20 80 interface g0/1 80</tspan></text>
+<text x="24" y="356" class="m ln" style="animation-delay:6.85s" xml:space="preserve"><tspan class="pr">R-EDGE(config)#</tspan><tspan class="cm"> ip route 0.0.0.0 0.0.0.0 92.12.34.2</tspan></text>
+<text x="24" y="377" class="m ln" style="animation-delay:7.30s" xml:space="preserve"><tspan class="pr">R-EDGE#</tspan><tspan class="cm"> ping 92.12.34.2</tspan></text>
+<text x="24" y="398" class="m ln" style="animation-delay:7.90s" xml:space="preserve"><tspan class="ok">!!!!!  Success rate is 100 percent (5/5)</tspan></text>
+<text x="24" y="419" class="m ln" style="animation-delay:8.30s"><tspan class="pr">R-EDGE#</tspan><tspan class="cm cur"> █</tspan></text>
+</svg>

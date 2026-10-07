@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="330" viewBox="0 0 900 330" role="img" aria-label="Fiche système façon neofetch : titre AIS, compétences, lab et certifications de Milourou">
+  <style>
+    .m { font-family: ui-monospace, SFMono-Regular, "Cascadia Code", Consolas, Menlo, "DejaVu Sans Mono", monospace; font-size: 14.5px; }
+    .k { fill: #39c5cf; font-weight: 700; }
+    .v { fill: #e6edf3; }
+    .d { fill: #8b949e; }
+    .led { animation: blink 1.2s steps(1) infinite; }
+    .l2 { animation-duration: .7s; } .l3 { animation-duration: 1.9s; } .l4 { animation-duration: .45s; } .l5 { animation-duration: 2.6s; }
+    @keyframes blink { 50% { opacity: .15; } }
+    .act { animation: act 2.2s ease-in-out infinite; }
+    @keyframes act { 0%,100% { width: 30px; } 50% { width: 88px; } }
+    .ln { opacity: 0; animation: show .01s forwards; }
+    @keyframes show { to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .led, .act { animation: none; } .ln { animation: none; opacity: 1; } }
+  </style>
+  <rect x="1" y="1" width="898" height="328" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- rack -->
+  <g transform="translate(40,34)">
+    <rect x="0" y="0" width="200" height="262" rx="8" fill="#161b22" stroke="#30363d"/>
+    <rect x="8" y="8" width="6" height="246" rx="2" fill="#21262d"/><rect x="186" y="8" width="6" height="246" rx="2" fill="#21262d"/>
+    <!-- U1 firewall -->
+    <g transform="translate(20,16)">
+      <rect width="160" height="34" rx="4" fill="#0d1117" stroke="#30363d"/>
+      <text x="10" y="21" class="m" style="font-size:10px" fill="#f0883e">FW</text>
+      <circle cx="132" cy="17" r="3.5" fill="#3fb950" class="led"/><circle cx="146" cy="17" r="3.5" fill="#f0883e" class="led l3"/>
+      <rect x="34" y="13" width="30" height="8" rx="2" fill="#f0883e" opacity=".55" class="act"/>
+    </g>
+    <!-- U2 switch -->
+    <g transform="translate(20,58)">
+      <rect width="160" height="34" rx="4" fill="#0d1117" stroke="#30363d"/>
+      <text x="10" y="21" class="m" style="font-size:10px" fill="#58a6ff">SW</text>
+      <g fill="#3fb950">
+        <rect x="34" y="12" width="7" height="10" class="led l4"/><rect x="45" y="12" width="7" height="10" class="led l2"/><rect x="56" y="12" width="7" height="10" class="led"/><rect x="67" y="12" width="7" height="10" class="led l5"/>
+        <rect x="78" y="12" width="7" height="10" class="led l3"/><rect x="89" y="12" width="7" height="10" class="led l4"/><rect x="100" y="12" width="7" height="10" class="led l2"/><rect x="111" y="12" width="7" height="10" class="led"/>
+      </g>
+      <circle cx="146" cy="17" r="3.5" fill="#3fb950" class="led l2"/>
+    </g>
+    <!-- U3 DC01 -->
+    <g transform="translate(20,100)">
+      <rect width="160" height="34" rx="4" fill="#0d1117" stroke="#30363d"/>
+      <text x="10" y="21" class="m" style="font-size:10px" fill="#e6edf3">DC01</text>
+      <rect x="46" y="13" width="30" height="8" rx="2" fill="#3fb950" opacity=".5" class="act"/>
+      <circle cx="132" cy="17" r="3.5" fill="#3fb950"/><circle cx="146" cy="17" r="3.5" fill="#58a6ff" class="led l3"/>
+    </g>
+    <!-- U4 DATA -->
+    <g transform="translate(20,142)">
+      <rect width="160" height="34" rx="4" fill="#0d1117" stroke="#30363d"/>
+      <text x="10" y="21" class="m" style="font-size:10px" fill="#e6edf3">DATA</text>
+      <rect x="46" y="13" width="30" height="8" rx="2" fill="#39c5cf" opacity=".5" class="act" style="animation-delay:.6s"/>
+      <circle cx="132" cy="17" r="3.5" fill="#3fb950"/><circle cx="146" cy="17" r="3.5" fill="#58a6ff" class="led l5"/>
+    </g>
+    <!-- U5 hyperviseur -->
+    <g transform="translate(20,184)">
+      <rect width="160" height="34" rx="4" fill="#0d1117" stroke="#30363d"/>
+      <text x="10" y="21" class="m" style="font-size:10px" fill="#bc8cff">KVM</text>
+      <rect x="46" y="13" width="30" height="8" rx="2" fill="#bc8cff" opacity=".5" class="act" style="animation-delay:1.1s"/>
+      <circle cx="132" cy="17" r="3.5" fill="#3fb950"/><circle cx="146" cy="17" r="3.5" fill="#bc8cff" class="led l4"/>
+    </g>
+    <text x="100" y="246" text-anchor="middle" class="m" style="font-size:10px" fill="#6e7681">rack · LAB1</text>
+  </g>
+
+  <!-- infos -->
+  <g class="m">
+    <text x="290" y="52" class="ln" style="animation-delay:.2s"><tspan fill="#3fb950" font-weight="700">milourou</tspan><tspan class="d">@</tspan><tspan fill="#3fb950" font-weight="700">lab1</tspan></text>
+    <text x="290" y="70" class="d ln" style="animation-delay:.3s">────────────────────────────────────────</text>
+    <text x="290" y="96"  class="ln" style="animation-delay:.5s"><tspan class="k">Titre</tspan><tspan class="v" x="392">Administrateur d'Infrastructures Sécurisées</tspan></text>
+    <text x="290" y="120" class="ln" style="animation-delay:.7s"><tspan class="k">Niveau</tspan><tspan class="v" x="392">RNCP 37680 · niveau 6 (bac+3/4)</tspan></text>
+    <text x="290" y="144" class="ln" style="animation-delay:.9s"><tspan class="k">Uptime</tspan><tspan class="v" x="392">passionné d'informatique depuis 2010</tspan></text>
+    <text x="290" y="168" class="ln" style="animation-delay:1.1s"><tspan class="k">Shells</tspan><tspan class="v" x="392">PowerShell · Bash · Cisco IOS</tspan></text>
+    <text x="290" y="192" class="ln" style="animation-delay:1.3s"><tspan class="k">Lab</tspan><tspan class="v" x="392">10 VM · 1 domaine AD · 8 comptes · 5 partages</tspan></text>
+    <text x="290" y="216" class="ln" style="animation-delay:1.5s"><tspan class="k">Network</tspan><tspan class="v" x="392">VLAN · inter-VLAN · routage · NAT/PAT · DHCP relay</tspan></text>
+    <text x="290" y="240" class="ln" style="animation-delay:1.7s"><tspan class="k">ITSM</tspan><tspan class="v" x="392">ITIL v4 · GLPI · support N1/N2</tspan></text>
+    <text x="290" y="264" class="ln" style="animation-delay:1.9s"><tspan class="k">Certifs</tspan><tspan class="v" x="392">4 × Google IT Support (Coursera)</tspan></text>
+  </g>
+  <!-- palette -->
+  <g class="ln" style="animation-delay:2.1s">
+    <rect x="290" y="282" width="28" height="16" fill="#30363d"/><rect x="318" y="282" width="28" height="16" fill="#f85149"/>
+    <rect x="346" y="282" width="28" height="16" fill="#3fb950"/><rect x="374" y="282" width="28" height="16" fill="#d29922"/>
+    <rect x="402" y="282" width="28" height="16" fill="#58a6ff"/><rect x="430" y="282" width="28" height="16" fill="#bc8cff"/>
+    <rect x="458" y="282" width="28" height="16" fill="#39c5cf"/><rect x="486" y="282" width="28" height="16" fill="#e6edf3"/>
+  </g>
+</svg>
