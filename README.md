@@ -40,6 +40,10 @@
 </tr>
 </table>
 
+<p align="center">
+  <img src="./assets/neofetch.svg" alt="Fiche système façon neofetch : titre AIS, shells, lab, réseau, ITSM, certifications" width="100%">
+</p>
+
 ---
 
 ## `$ tree ~/competences`
@@ -47,8 +51,8 @@
 | | Domaine | Compétences |
 |:-:|---|---|
 | 🖥️ | **Poste de travail & matériel** | Architecture d'un ordinateur, composants, connectique · BIOS / UEFI · MBR / GPT · installation et dépannage Windows et Linux |
-| 🎧 | **Centre de services** | Diagnostic et résolution d'incidents · prise en main à distance · procédures · bonnes pratiques **ITIL** · ticketing **GLPI** |
-| 🌐 | **Réseaux** | Modèles **OSI** et **TCP/IP** · Ethernet, MAC, ARP · adressage IP et sous-réseaux · DHCP · commutation et **VLAN** · routage, **NAT** · switch de niveau 3 · Wi-Fi · **Cisco IOS** · Telnet / SSH |
+| 🎧 | **Centre de services** | Qualification d'incidents (impact × urgence) · diagnostic Windows (observateur d'événements, Sysinternals, `ping`, `netstat`) · prise en main à distance · cycle de vie d'un ticket **GLPI** · bonnes pratiques **ITIL v4** · base de connaissances |
+| 🌐 | **Réseaux** | Modèles **OSI** et **TCP/IP** · Ethernet, MAC, ARP · plans d'adressage **CIDR** et RFC 1918 · **VLAN**, trunk 802.1Q, VLAN natif et de management · routage **inter-VLAN** (switch L3) · routes statiques et par défaut · **NAT/PAT** et redirection de ports · DHCP et **relais DHCP** · ACL standard · Wi-Fi · IPv6 · **Cisco IOS** · SSH |
 | 🪟 | **Systèmes Windows** | Windows Server 2022 · **Active Directory** (OU, utilisateurs, groupes) · DNS · DHCP · serveur de fichiers · partages SMB · permissions **NTFS** |
 | 🐧 | **Systèmes Linux** | Ligne de commande · utilisateurs, groupes, permissions · intégration à un domaine AD (**realmd · sssd · Kerberos**) · synchronisation horaire (**chrony**) |
 | 🧩 | **Virtualisation** | **KVM / QEMU / libvirt** · réseaux virtuels isolés · UEFI Secure Boot · conception d'un lab multi-VM |
@@ -100,6 +104,30 @@ Une **PME simulée** de bout en bout : un domaine, des services, des utilisateur
 </p>
 
 > 📝 L'histoire complète du lab est racontée sur LinkedIn : [**Dès le début de ma formation AIS, j'ai construit mon lab**](https://www.linkedin.com/pulse/d%C3%A8s-le-d%C3%A9but-de-ma-formation-ais-jai-construit-mon-lab-coulibaly-t5ofe/)
+
+---
+
+## `$ ls ~/ateliers` · Réseau Cisco & support
+
+Des mises en situation d'entreprise, réalisées sur **Cisco Packet Tracer** et **GLPI** pendant la formation.
+
+<p align="center">
+  <img src="./assets/reseau-multisite.svg" alt="Atelier Packet Tracer : réseau multi-sites Paris et Lille, DMZ, Wi-Fi public, WAN, routeur VPN" width="100%">
+</p>
+
+| | Atelier | Mise en situation | Ce que j'ai mis en œuvre |
+|:-:|---|---|---|
+| 🏢 | **Réseau d'entreprise multi-sites** | PME de 59 salariés appelée à dépasser 200, deux sites et des nomades en VPN | Plan d'adressage évolutif (LAN, DMZ, Wi-Fi public, VPN) · câblage fibre SFP et liaison série · routeurs 2901 / 1941 · switchs 3650 / 2960 · routes statiques · DHCP |
+| 🗺️ | **Plan d'adressage multi-sites** | Refonte du réseau d'une entreprise de 455 équipements sur deux sites | Sous-réseaux RFC 1918 cloisonnés par usage (postes, serveurs, copieurs, Wi-Fi public et privé), sans chevauchement |
+| 🔀 | **Cisco IOS & routage** | Interconnexion de 4 LAN via deux routeurs | Configuration IOS des switchs et routeurs · serveurs DHCP par LAN · routes statiques et par défaut |
+| 🧱 | **VLAN & routage inter-VLAN** | Segmentation d'un réseau sur 3 switchs | VLAN 10/20/30 · trunks · VLAN de management et accès SSH · VLAN natif et VLAN autorisés · switch de niveau 3 · ACL standard |
+| 🌍 | **NAT & redirection de ports** | Deux LAN reliés par un « Internet » simulé | NAT sur routeurs de bordure · redirection de port vers un serveur web |
+| 📡 | **Relais DHCP** | Un serveur DHCP centralisé pour plusieurs sous-réseaux | `ip helper-address` sur l'interface du routeur · une étendue par sous-réseau |
+| 🎧 | **Jeu de rôle support N1** | PME de 80 salariés, appels d'utilisateurs en difficulté | Accueil et reformulation · qualification ITIL (impact × urgence) · diagnostic à distance · ticket GLPI complet, de l'ouverture à la clôture |
+
+<p align="center">
+  <img src="./assets/cisco-ios.svg" alt="Console Cisco IOS : VLAN, trunk, routage inter-VLAN, relais DHCP, NAT/PAT et route par défaut" width="100%">
+</p>
 
 ---
 
