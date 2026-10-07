@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400" role="img" aria-label="Terminal : présentation de Milourou Coulibaly, futur Administrateur d'Infrastructures Sécurisées">
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, "Cascadia Code", Consolas, Menlo, "DejaVu Sans Mono", monospace; font-size: 15px; }
+    .p { fill: #3fb950; font-weight: 700; }
+    .path { fill: #58a6ff; font-weight: 700; }
+    .cmd { fill: #e6edf3; }
+    .out { fill: #8b949e; }
+    .hl { fill: #e6edf3; font-weight: 700; }
+    .acc { fill: #f0883e; }
+    .ok { fill: #3fb950; }
+    .cy { fill: #39c5cf; }
+    .ln { opacity: 0; animation: show .01s forwards; }
+    @keyframes show { to { opacity: 1; } }
+    .cur { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .ln { animation: none; opacity: 1; } .cur { animation: none; } }
+  </style>
+  <defs>
+    <linearGradient id="bar" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#21262d"/><stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#ffffff" opacity=".018"/>
+    </pattern>
+  </defs>
+
+  <!-- fenêtre -->
+  <rect x="1" y="1" width="898" height="398" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+  <path d="M1 13a12 12 0 0 1 12-12h874a12 12 0 0 1 12 12v23H1z" fill="url(#bar)"/>
+  <line x1="1" y1="36" x2="899" y2="36" stroke="#30363d"/>
+  <circle cx="22" cy="18.5" r="6" fill="#ff5f56"/>
+  <circle cx="42" cy="18.5" r="6" fill="#ffbd2e"/>
+  <circle cx="62" cy="18.5" r="6" fill="#27c93f"/>
+  <text x="450" y="23" text-anchor="middle" class="mono" style="font-size:13px" fill="#8b949e">milourou@lab1: ~ — ssh · tssr.local</text>
+  <rect x="1" y="37" width="898" height="362" rx="12" fill="url(#scan)"/>
+
+  <g class="mono">
+    <!-- 1 -->
+    <text x="24" y="70" class="ln" style="animation-delay:.2s"><tspan class="p">milourou@lab1</tspan><tspan class="out">:</tspan><tspan class="path">~</tspan><tspan class="out">$ </tspan><tspan class="cmd">whoami</tspan></text>
+    <text x="24" y="92" class="ln" style="animation-delay:.9s"><tspan class="hl">Milourou COULIBALY</tspan><tspan class="out"> — futur </tspan><tspan class="acc">Administrateur d'Infrastructures Sécurisées</tspan></text>
+
+    <!-- 2 -->
+    <text x="24" y="126" class="ln" style="animation-delay:1.7s"><tspan class="p">milourou@lab1</tspan><tspan class="out">:</tspan><tspan class="path">~</tspan><tspan class="out">$ </tspan><tspan class="cmd">cat /etc/formation</tspan></text>
+    <text x="24" y="148" class="ln" style="animation-delay:2.4s"><tspan class="cy">TSSR</tspan><tspan class="out"> RNCP 37682 (niv. 5) </tspan><tspan class="hl">→</tspan><tspan class="cy"> AIS</tspan><tspan class="out"> RNCP 37680 (niv. 6) · O'clock · 2026 → 2027</tspan></text>
+
+    <!-- 3 -->
+    <text x="24" y="182" class="ln" style="animation-delay:3.2s"><tspan class="p">milourou@lab1</tspan><tspan class="out">:</tspan><tspan class="path">~</tspan><tspan class="out">$ </tspan><tspan class="cmd">history | grep parcours</tspan></text>
+    <text x="24" y="204" class="ln" style="animation-delay:3.9s"><tspan class="out">  2010  </tspan><tspan class="cmd">premiers PC montés, autodidacte</tspan></text>
+    <text x="24" y="226" class="ln" style="animation-delay:4.2s"><tspan class="out">  2023  </tspan><tspan class="cmd">licence audiovisuel &amp; communication — et l'IT toujours en fond</tspan></text>
+    <text x="24" y="248" class="ln" style="animation-delay:4.5s"><tspan class="out">  2026  </tspan><tspan class="acc">reconversion assumée : audiovisuel → infrastructures &amp; cybersécurité</tspan></text>
+
+    <!-- 4 -->
+    <text x="24" y="282" class="ln" style="animation-delay:5.3s"><tspan class="p">milourou@lab1</tspan><tspan class="out">:</tspan><tspan class="path">~</tspan><tspan class="out">$ </tspan><tspan class="cmd">systemctl status career.service</tspan></text>
+    <text x="24" y="304" class="ln" style="animation-delay:6.0s"><tspan class="ok">●</tspan><tspan class="hl"> career.service</tspan><tspan class="out"> — Administration d'infrastructures sécurisées</tspan></text>
+    <text x="24" y="326" class="ln" style="animation-delay:6.3s"><tspan class="out">     Active: </tspan><tspan class="ok">active (running)</tspan><tspan class="out"> since 2010 · reloaded 2026</tspan></text>
+    <text x="24" y="348" class="ln" style="animation-delay:6.6s"><tspan class="out">     Search: </tspan><tspan class="acc">stage AIS 350 h — dès mai 2027</tspan><tspan class="out"> · Hauts-de-France / remote</tspan></text>
+
+    <!-- prompt final -->
+    <text x="24" y="382" class="ln" style="animation-delay:7.4s"><tspan class="p">milourou@lab1</tspan><tspan class="out">:</tspan><tspan class="path">~</tspan><tspan class="out">$ </tspan><tspan class="cur cmd">█</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500" role="img" aria-label="Topologie du homelab LAB1 : domaine tssr.local sur le réseau isolé TSSR-LAN 192.168.10.0/24, virtualisé sous KVM">
+  <style>
+    .t { font-family: ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .m { font-family: ui-monospace, SFMono-Regular, Consolas, Menlo, "DejaVu Sans Mono", monospace; }
+    .title { font-size: 15px; font-weight: 700; fill: #e6edf3; }
+    .sub { font-size: 11.5px; fill: #8b949e; }
+    .lbl { font-size: 12.5px; font-weight: 700; fill: #e6edf3; }
+    .os { font-size: 10.5px; fill: #8b949e; }
+    .tag { font-size: 10px; font-weight: 700; }
+    .flow { stroke-dasharray: 6 8; animation: flow 1.6s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: -28; } }
+    .pulse { animation: pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse { 50% { opacity: .35; } }
+    @media (prefers-reduced-motion: reduce) { .flow, .pulse { animation: none; } }
+  </style>
+
+  <rect x="1" y="1" width="898" height="498" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- en-tête -->
+  <text x="28" y="38" class="t title">LAB1 · domaine tssr.local</text>
+  <text x="28" y="57" class="m sub">hôte Deepin Linux · Core Ultra 9 285K · ~93 Go RAM · KVM / QEMU / libvirt · pool NVMe dédié</text>
+  <g class="m" font-size="11">
+    <circle cx="640" cy="34" r="5" fill="#3fb950"/><text x="650" y="38" fill="#8b949e">déployé</text>
+    <circle cx="720" cy="34" r="5" fill="#d29922" class="pulse"/><text x="730" y="38" fill="#8b949e">en cours</text>
+    <circle cx="806" cy="34" r="5" fill="none" stroke="#6e7681" stroke-dasharray="2 2"/><text x="816" y="38" fill="#8b949e">prévu</text>
+  </g>
+
+  <!-- zone réseau isolé -->
+  <rect x="20" y="78" width="860" height="404" rx="10" fill="#161b22" stroke="#30363d" stroke-dasharray="4 4"/>
+  <text x="36" y="100" class="m sub">réseau virtuel isolé TSSR-LAN · 192.168.10.0/24 · sans passerelle · DHCP assuré par DC01</text>
+
+  <!-- serveurs -->
+  <!-- DC01 -->
+  <line x1="300" y1="196" x2="300" y2="262" stroke="#3fb950" stroke-width="2"/>
+  <rect x="165" y="116" width="270" height="80" rx="8" fill="#0d1117" stroke="#3fb950" stroke-width="1.5"/>
+  <rect x="165" y="116" width="6" height="80" rx="3" fill="#3fb950"/>
+  <text x="185" y="140" class="t lbl">DC01 · .250</text>
+  <text x="185" y="158" class="m os">Windows Server 2022</text>
+  <text x="185" y="176" class="m os" fill="#39c5cf" style="fill:#39c5cf">AD DS · DNS · DHCP</text>
+  <text x="185" y="190" class="m os">OU LAB1 · 8 users · 3 groupes</text>
+
+  <!-- DATA -->
+  <line x1="600" y1="196" x2="600" y2="262" stroke="#3fb950" stroke-width="2"/>
+  <rect x="465" y="116" width="270" height="80" rx="8" fill="#0d1117" stroke="#3fb950" stroke-width="1.5"/>
+  <rect x="465" y="116" width="6" height="80" rx="3" fill="#3fb950"/>
+  <text x="485" y="140" class="t lbl">DATA</text>
+  <text x="485" y="158" class="m os">Windows Server · serveur de fichiers</text>
+  <text x="485" y="176" class="m os" style="fill:#39c5cf">5 partages SMB · NTFS</text>
+  <text x="485" y="190" class="m os">héritage maîtrisé · moindre privilège</text>
+
+  <!-- bus -->
+  <rect x="50" y="258" width="800" height="8" rx="4" fill="#21262d"/>
+  <line x1="54" y1="262" x2="846" y2="262" stroke="#58a6ff" stroke-width="2.5" class="flow"/>
+  <rect x="238" y="226" width="424" height="20" rx="4" fill="#161b22"/>
+  <text x="450" y="240" text-anchor="middle" class="m sub">switch virtuel libvirt · Kerberos · LDAP · DNS · SMB · NTP</text>
+
+  <!-- postes : 8 x 100 px, départ x=50 -->
+  <g class="t">
+    <!-- Windows -->
+    <g>
+      <line x1="95" y1="266" x2="95" y2="320" stroke="#3fb950" stroke-width="2"/>
+      <rect x="52" y="320" width="86" height="64" rx="7" fill="#0d1117" stroke="#3fb950"/>
+      <text x="95" y="345" text-anchor="middle" class="lbl" style="font-size:11px">ACCUEIL</text>
+      <text x="95" y="362" text-anchor="middle" class="m os">Win 11 Pro</text>
+      <text x="95" y="376" text-anchor="middle" class="m tag" fill="#3fb950">JOINED</text>
+    </g>
+    <g>
+      <line x1="195" y1="266" x2="195" y2="320" stroke="#3fb950" stroke-width="2"/>
+      <rect x="152" y="320" width="86" height="64" rx="7" fill="#0d1117" stroke="#3fb950"/>
+      <text x="195" y="345" text-anchor="middle" class="lbl" style="font-size:11px">PC-DIR</text>
+      <text x="195" y="362" text-anchor="middle" class="m os">Win 11 Pro</text>
+      <text x="195" y="376" text-anchor="middle" class="m tag" fill="#3fb950">JOINED</text>
+    </g>
+    <g>
+      <line x1="295" y1="266" x2="295" y2="320" stroke="#3fb950" stroke-width="2"/>
+      <rect x="252" y="320" width="86" height="64" rx="7" fill="#0d1117" stroke="#3fb950"/>
+      <text x="295" y="345" text-anchor="middle" class="lbl" style="font-size:11px">SECRETARIAT</text>
+      <text x="295" y="362" text-anchor="middle" class="m os">Win 11 Pro</text>
+      <text x="295" y="376" text-anchor="middle" class="m tag" fill="#3fb950">JOINED</text>
+    </g>
+    <g>
+      <line x1="395" y1="266" x2="395" y2="320" stroke="#3fb950" stroke-width="2"/>
+      <rect x="352" y="320" width="86" height="64" rx="7" fill="#0d1117" stroke="#3fb950"/>
+      <text x="395" y="345" text-anchor="middle" class="lbl" style="font-size:11px">COMPTA-1</text>
+      <text x="395" y="362" text-anchor="middle" class="m os">Win 11 Pro</text>
+      <text x="395" y="376" text-anchor="middle" class="m tag" fill="#3fb950">JOINED</text>
+    </g>
+    <g>
+      <line x1="495" y1="266" x2="495" y2="320" stroke="#3fb950" stroke-width="2"/>
+      <rect x="452" y="320" width="86" height="64" rx="7" fill="#0d1117" stroke="#3fb950"/>
+      <text x="495" y="345" text-anchor="middle" class="lbl" style="font-size:11px">COMPTA-2</text>
+      <text x="495" y="362" text-anchor="middle" class="m os">Win 11 Pro</text>
+      <text x="495" y="376" text-anchor="middle" class="m tag" fill="#3fb950">JOINED</text>
+    </g>
+    <!-- Linux -->
+    <g>
+      <line x1="595" y1="266" x2="595" y2="320" stroke="#d29922" stroke-width="2" stroke-dasharray="4 3"/>
+      <rect x="552" y="320" width="86" height="64" rx="7" fill="#0d1117" stroke="#d29922"/>
+      <text x="595" y="345" text-anchor="middle" class="lbl" style="font-size:11px">TECH-1</text>
+      <text x="595" y="362" text-anchor="middle" class="m os">Ubuntu 26.04</text>
+      <text x="595" y="376" text-anchor="middle" class="m tag pulse" fill="#d29922">realmd/sssd</text>
+    </g>
+    <g>
+      <line x1="695" y1="266" x2="695" y2="320" stroke="#6e7681" stroke-width="1.5" stroke-dasharray="2 4"/>
+      <rect x="652" y="320" width="86" height="64" rx="7" fill="none" stroke="#6e7681" stroke-dasharray="3 3"/>
+      <text x="695" y="345" text-anchor="middle" class="lbl" style="font-size:11px;fill:#8b949e">TECH-2</text>
+      <text x="695" y="362" text-anchor="middle" class="m os">Linux</text>
+      <text x="695" y="376" text-anchor="middle" class="m tag" fill="#6e7681">PLANNED</text>
+    </g>
+    <g>
+      <line x1="795" y1="266" x2="795" y2="320" stroke="#6e7681" stroke-width="1.5" stroke-dasharray="2 4"/>
+      <rect x="752" y="320" width="86" height="64" rx="7" fill="none" stroke="#6e7681" stroke-dasharray="3 3"/>
+      <text x="795" y="345" text-anchor="middle" class="lbl" style="font-size:11px;fill:#8b949e">TECH-3</text>
+      <text x="795" y="362" text-anchor="middle" class="m os">Fedora 44</text>
+      <text x="795" y="376" text-anchor="middle" class="m tag" fill="#6e7681">PLANNED</text>
+    </g>
+  </g>
+
+  <!-- pied : incidents résolus -->
+  <line x1="36" y1="408" x2="864" y2="408" stroke="#30363d"/>
+  <text x="36" y="430" class="m" font-size="11.5" fill="#8b949e"><tspan fill="#3fb950">✔</tspan> provisioning AD en PowerShell depuis CSV   <tspan fill="#3fb950">✔</tspan> validation bout-en-bout depuis un vrai poste client</text>
+  <text x="36" y="450" class="m" font-size="11.5" fill="#8b949e"><tspan fill="#f0883e">⚑</tspan> incident résolu : fuseau horaire erroné sur DC01 → dérive ~9 h détectée par chrony, corrigée</text>
+  <text x="36" y="470" class="m" font-size="11.5" fill="#8b949e"><tspan fill="#f0883e">⚑</tspan> diagnostic NTP : root dispersion W32Time vs maxdistance chrony (ajustement lab, documenté)</text>
+</svg>
