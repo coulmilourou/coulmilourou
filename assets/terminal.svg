@@ -41,7 +41,7 @@
 
     <!-- 2 -->
     <text x="24" y="126" class="ln" style="animation-delay:1.7s"><tspan class="p">milourou@lab1</tspan><tspan class="out">:</tspan><tspan class="path">~</tspan><tspan class="out">$ </tspan><tspan class="cmd">cat /etc/formation</tspan></text>
-    <text x="24" y="148" class="ln" style="animation-delay:2.4s"><tspan class="cy">TSSR</tspan><tspan class="out"> RNCP 37682 (niv. 5) </tspan><tspan class="hl">→</tspan><tspan class="cy"> AIS</tspan><tspan class="out"> RNCP 37680 (niv. 6) · O'clock · 2026 → 2027</tspan></text>
+    <text x="24" y="148" class="ln" style="animation-delay:2.4s"><tspan class="cy">AIS</tspan><tspan class="out"> · Administrateur d'Infrastructures Sécurisées · RNCP 37680 (niv. 6) · O'clock</tspan></text>
 
     <!-- 3 -->
     <text x="24" y="182" class="ln" style="animation-delay:3.2s"><tspan class="p">milourou@lab1</tspan><tspan class="out">:</tspan><tspan class="path">~</tspan><tspan class="out">$ </tspan><tspan class="cmd">history | grep parcours</tspan></text>
@@ -53,7 +53,7 @@
     <text x="24" y="282" class="ln" style="animation-delay:5.3s"><tspan class="p">milourou@lab1</tspan><tspan class="out">:</tspan><tspan class="path">~</tspan><tspan class="out">$ </tspan><tspan class="cmd">systemctl status career.service</tspan></text>
     <text x="24" y="304" class="ln" style="animation-delay:6.0s"><tspan class="ok">●</tspan><tspan class="hl"> career.service</tspan><tspan class="out"> — Administration d'infrastructures sécurisées</tspan></text>
     <text x="24" y="326" class="ln" style="animation-delay:6.3s"><tspan class="out">     Active: </tspan><tspan class="ok">active (running)</tspan><tspan class="out"> since 2010 · reloaded 2026</tspan></text>
-    <text x="24" y="348" class="ln" style="animation-delay:6.6s"><tspan class="out">     Search: </tspan><tspan class="acc">stage AIS 350 h — dès mai 2027</tspan><tspan class="out"> · Hauts-de-France / remote</tspan></text>
+    <text x="24" y="348" class="ln" style="animation-delay:6.6s"><tspan class="out">      Focus: </tspan><tspan class="acc">systèmes · réseaux · virtualisation · cybersécurité</tspan></text>
 
     <!-- prompt final -->
     <text x="24" y="382" class="ln" style="animation-delay:7.4s"><tspan class="p">milourou@lab1</tspan><tspan class="out">:</tspan><tspan class="path">~</tspan><tspan class="out">$ </tspan><tspan class="cur cmd">█</tspan></text>
