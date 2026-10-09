@@ -55,9 +55,9 @@
 | 🌐 | **Réseaux** | Modèles **OSI** et **TCP/IP** · Ethernet, MAC, ARP · plans d'adressage **CIDR** et RFC 1918 · **VLAN**, trunk 802.1Q, VLAN natif et de management · routage **inter-VLAN** (switch L3) · routes statiques et par défaut · **NAT/PAT** et redirection de ports · DHCP et **relais DHCP** · ACL standard · Wi-Fi · IPv6 · **Cisco IOS** · SSH |
 | 🪟 | **Systèmes Windows** | Windows Server 2022 · **Active Directory** (OU, utilisateurs, groupes) · DNS · DHCP · serveur de fichiers · partages SMB · permissions **NTFS** |
 | 🐧 | **Systèmes Linux** | Ligne de commande · utilisateurs, groupes, permissions · intégration à un domaine AD (**realmd · sssd · Kerberos**) · synchronisation horaire (**chrony**) |
-| 🧩 | **Virtualisation** | **KVM / QEMU / libvirt** · réseaux virtuels isolés · UEFI Secure Boot · conception d'un lab multi-VM |
+| 🧩 | **Virtualisation** | **Proxmox VE** (hyperviseur de type 1, bridges Linux `vmbr`) · **KVM / QEMU / libvirt** · réseaux virtuels isolés · UEFI Secure Boot · conception d'un lab multi-VM |
 | ⚙️ | **Automatisation** | **PowerShell** (provisioning AD depuis CSV) · Bash · Git |
-| 🔐 | **Sécurité** | Bonnes pratiques et hygiène informatique · principe du moindre privilège · séparation lab / production |
+| 🔐 | **Sécurité** | Pare-feu **OPNsense** (règles, NAT, cloisonnement de réseaux) · **iptables** (NAT, DNAT, persistance) · VPN **WireGuard** · bonnes pratiques et hygiène informatique · moindre privilège · séparation lab / production |
 
 <details open>
 <summary><b>🧰 Stack technique</b></summary>
@@ -80,6 +80,13 @@
 **Virtualisation**<br>
 <img src="https://img.shields.io/badge/KVM-QEMU_·_libvirt-FF6600?style=flat-square&logo=qemu&logoColor=white" alt="KVM QEMU libvirt">
 <img src="https://img.shields.io/badge/virt--manager-30363d?style=flat-square" alt="virt-manager">
+<img src="https://img.shields.io/badge/Proxmox_VE-E57000?style=flat-square&logo=proxmox&logoColor=white" alt="Proxmox VE">
+
+**Pare-feu & VPN**<br>
+<img src="https://img.shields.io/badge/OPNsense-D94F00?style=flat-square&logo=opnsense&logoColor=white" alt="OPNsense">
+<img src="https://img.shields.io/badge/WireGuard-88171A?style=flat-square&logo=wireguard&logoColor=white" alt="WireGuard">
+<img src="https://img.shields.io/badge/iptables-NAT_·_DNAT-30363d?style=flat-square" alt="iptables">
+<img src="https://img.shields.io/badge/Kea-DHCPv4-30363d?style=flat-square" alt="Kea DHCPv4">
 
 **Support & ITSM**<br>
 <img src="https://img.shields.io/badge/ITIL-bonnes_pratiques-6f42c1?style=flat-square" alt="ITIL">
@@ -107,9 +114,13 @@ Une **PME simulée** de bout en bout : un domaine, des services, des utilisateur
 
 ---
 
-## `$ ls ~/ateliers` · Réseau Cisco & support
+## `$ ls ~/ateliers` · Virtualisation, sécurité, réseau & support
 
-Des mises en situation d'entreprise, réalisées sur **Cisco Packet Tracer** et **GLPI** pendant la formation.
+Des mises en situation d'entreprise réalisées pendant la formation, sur serveur dédié, **Cisco Packet Tracer** et **GLPI**.
+
+<p align="center">
+  <img src="./assets/proxmox-opnsense.svg" alt="Atelier Proxmox : double NAT iptables et OPNsense, deux LAN cloisonnés avec DHCP Kea, accès distant par VPN WireGuard" width="100%">
+</p>
 
 <p align="center">
   <img src="./assets/reseau-multisite.svg" alt="Atelier Packet Tracer : réseau multi-sites Paris et Lille, DMZ, Wi-Fi public, WAN, routeur VPN" width="100%">
@@ -117,6 +128,7 @@ Des mises en situation d'entreprise, réalisées sur **Cisco Packet Tracer** et 
 
 | | Atelier | Mise en situation | Ce que j'ai mis en œuvre |
 |:-:|---|---|---|
+| 🛡️ | **Proxmox, OPNsense & WireGuard** | Serveur dédié à une seule IP publique, partagé en binôme, à préparer pour héberger les VM de la formation | Bridges Linux · double NAT (iptables sur l'hôte puis OPNsense) · DHCP Kea · deux LAN cloisonnés par règles de pare-feu · VPN WireGuard en split tunnel avec redirection de port · diagnostic `tcpdump` et identification des interfaces par adresse MAC |
 | 🏢 | **Réseau d'entreprise multi-sites** | PME de 59 salariés appelée à dépasser 200, deux sites et des nomades en VPN | Plan d'adressage évolutif (LAN, DMZ, Wi-Fi public, VPN) · câblage fibre SFP et liaison série · routeurs 2901 / 1941 · switchs 3650 / 2960 · routes statiques · DHCP |
 | 🗺️ | **Plan d'adressage multi-sites** | Refonte du réseau d'une entreprise de 455 équipements sur deux sites | Sous-réseaux RFC 1918 cloisonnés par usage (postes, serveurs, copieurs, Wi-Fi public et privé), sans chevauchement |
 | 🔀 | **Cisco IOS & routage** | Interconnexion de 4 LAN via deux routeurs | Configuration IOS des switchs et routeurs · serveurs DHCP par LAN · routes statiques et par défaut |
