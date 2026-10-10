@@ -15,7 +15,7 @@
 
 ## `$ cat ~/about.md`
 
-> **Passionné d'informatique depuis 2010**, j'ai appris sur le terrain avant de l'apprendre en formation : montage et dépannage de postes, support utilisateurs, réseau d'un cybercafé. Titulaire d'une licence en audiovisuel et communication, j'ai choisi en 2026 de faire de l'infrastructure mon métier.
+> **Passionné d'informatique depuis 2010**, j'ai appris sur le terrain avant de l'apprendre en formation : montage et dépannage de postes, support utilisateurs, réseau d'un cybercafé. Titulaire d'une licence professionnelle en cinéma et audiovisuel, j'ai choisi en 2026 de faire de l'infrastructure mon métier.
 >
 > Je prépare le titre **Administrateur d'Infrastructures Sécurisées** (AIS, RNCP 37680, niveau 6) chez O'clock. Curieux de nature, je touche à presque tout : je monte des labs, je teste, je provoque des pannes pour comprendre comment les résoudre, et je documente ce que j'apprends.
 
@@ -161,15 +161,77 @@ Des mises en situation d'entreprise réalisées pendant la formation, sur serveu
 | 🌐 | **The Bits and Bytes of Computer Networking** | Google · Coursera | oct. 2025 | [🔗](https://coursera.org/verify/H8KIM96L44D0) |
 | 💻 | **Operating Systems and You: Becoming a Power User** | Google · Coursera | nov. 2025 | [🔗](https://coursera.org/verify/CYPTYU03KB4J) |
 | 🗄️ | **System Administration and IT Infrastructure Services** | Google · Coursera | janv. 2026 | [🔗](https://coursera.org/verify/XRI2K30JSG6V) |
-| 🎬 | **Licence Audiovisuel & Communication** | ESMA | 2023 | — |
+| 🎬 | **Licence professionnelle Cinéma et Audiovisuel** · option Réalisation | ESMA | 2023 | — |
 
 ---
 
 ## `$ git log --graph` · Parcours
 
 <p align="center">
-  <img src="./assets/parcours.svg" alt="Parcours sous forme de git log : 2010 autodidacte, cybercafé, licence audiovisuel, technicien IT, certificats Google, 2026 formation AIS" width="100%">
+  <img src="./assets/parcours.svg" alt="Parcours sous forme de git log : 2010 autodidacte, cybercafé, webmaster, licence cinéma et audiovisuel, AHOKO MEDIA, certificats Google, 2026 formation AIS" width="100%">
 </p>
+
+---
+
+## `$ cat ~/cv.md` · Curriculum vitae
+
+> 🎯 **Recherche un stage de 350 h dès février 2027** en administration systèmes et réseaux, sécurisation, supervision ou sauvegarde, dans le cadre du titre AIS.
+
+<table>
+<tr>
+<td width="58%" valign="top">
+
+### 💼 Expériences professionnelles
+
+**Dirigeant** · AHOKO MEDIA<br>
+<sub>juin 2023 – déc. 2023</sub>
+- Mise en place et maintenance du parc informatique : postes de travail et logiciels
+- Suivi technique des projets numériques et sauvegarde des fichiers
+- Coordination d'équipe et gestion de l'activité
+
+**Assistant Webmaster** · MZK Group<br>
+<sub>2020 – 2021</sub>
+- Création et maintenance de sites WordPress et Joomla
+- Assistance technique aux utilisateurs lors d'événements
+- Gestion de la communication digitale
+
+**Gérant de cybercafé** · KEC INCO<br>
+<sub>2011 – 2014</sub>
+- Maintenance quotidienne des postes informatiques
+- Assistance aux clients et résolution des difficultés d'utilisation
+- Gestion de l'activité du cybercafé
+
+</td>
+<td width="42%" valign="top">
+
+### 🎓 Formation
+
+**Administrateur d'Infrastructures Sécurisées**<br>
+Titre professionnel niveau 6 (bac+3) · O'clock<br>
+<sub>sept. 2026 – mai 2027 · à distance</sub>
+
+**Google IT Support Professional Certificate**<br>
+4 cours sur 5 obtenus · sécurité informatique en cours<br>
+<sub>depuis oct. 2025 · Google Career Certificates</sub>
+
+**Licence professionnelle Cinéma et Audiovisuel**<br>
+Option Réalisation · ESMA<br>
+<sub>2020 – 2023</sub>
+
+### 🗣️ Langues
+**Anglais** · B2, professionnel
+
+### 🤝 Savoir-être
+Adaptation · Rigueur · Esprit d'équipe · Créativité
+
+</td>
+</tr>
+</table>
+
+**🛠️ Compétences pratiquées**
+- **En formation** : créer des machines virtuelles, cloisonner les environnements, configurer un pare-feu et un VPN (Proxmox VE, OPNsense, WireGuard)
+- **Support et exploitation** : diagnostiquer les incidents, maintenir les postes, assurer l'assistance à distance (RMM, ticketing, Microsoft 365, Google Workspace)
+- **Projet personnel, infrastructure sécurisée multi-site** : infrastructure Windows/Linux reliant deux sites, avec machines virtuelles et VLAN (Active Directory, DNS/DHCP, GPO, serveur de fichiers) · switchs manageables et segmentation en VLAN · communications inter-sites sécurisées (OPNsense, VPN site à site) · création des comptes AD par import CSV en PowerShell · architecture et configurations documentées
 
 ---
 
