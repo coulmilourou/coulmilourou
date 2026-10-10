@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="575" viewBox="0 0 900 575" role="img" aria-label="Lab multi-site : six zones VLAN derrière un pare-feu, matrice des flux avec refus par défaut, tests de filtrage autorisés et refusés">
+<style>
+.t{font-family:ui-sans-serif,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.m{font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,"DejaVu Sans Mono",monospace}
+.zt{font-size:12px;font-weight:700;letter-spacing:.06em}.zd{font-size:10.5px;fill:#8b949e}
+.nl{font-size:12.5px;font-weight:700;fill:#e6edf3}.ns{font-size:10.5px;fill:#8b949e}
+.trunk{stroke-dasharray:4 4;animation:fl 1s linear infinite}@keyframes fl{to{stroke-dashoffset:-16}}
+@media (prefers-reduced-motion:reduce){.trunk{animation:none}}
+</style>
+<rect x="1" y="1" width="898" height="573" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+<text x="26" y="36" class="t" font-size="15" font-weight="700" fill="#e6edf3">Lab multi-site · segmenter n'est pas filtrer</text>
+<text x="26" y="55" class="m ns">Site A · Cisco Packet Tracer · 6 zones VLAN · trunk 802.1Q · matrice des flux · refus par défaut</text>
+<rect x="20" y="70" width="860" height="410" rx="10" fill="#161b22" stroke="#30363d" stroke-dasharray="4 4"/>
+<text x="34" y="92" class="t nl">Site A</text>
+<rect x="40" y="132" width="250" height="72" rx="8" fill="#0d1117" stroke="#f0883e" stroke-width="1.5"/>
+<text x="54" y="155" class="t zt" fill="#f0883e">ADMINISTRATION</text>
+<text x="54" y="172" class="t zd">réglages des équipements</text>
+<text x="54" y="191" class="m" font-size="10" fill="#f0883e" opacity=".8">VLAN admin · IP fixes</text>
+<path d="M290 168 L392 300" stroke="#f0883e" stroke-opacity=".55" stroke-width="2" fill="none"/>
+<rect x="40" y="230" width="250" height="72" rx="8" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5"/>
+<text x="54" y="253" class="t zt" fill="#58a6ff">SERVICES</text>
+<text x="54" y="270" class="t zd">serveurs · stockage · domotique</text>
+<text x="54" y="289" class="m" font-size="10" fill="#58a6ff" opacity=".8">VLAN services · IP fixes</text>
+<path d="M290 266 L392 300" stroke="#58a6ff" stroke-opacity=".55" stroke-width="2" fill="none"/>
+<rect x="40" y="328" width="250" height="72" rx="8" fill="#0d1117" stroke="#3fb950" stroke-width="1.5"/>
+<text x="54" y="351" class="t zt" fill="#3fb950">UTILISATEURS</text>
+<text x="54" y="368" class="t zd">postes du quotidien</text>
+<text x="54" y="387" class="m" font-size="10" fill="#3fb950" opacity=".8">VLAN postes · DHCP</text>
+<path d="M290 364 L392 300" stroke="#3fb950" stroke-opacity=".55" stroke-width="2" fill="none"/>
+<rect x="610" y="132" width="250" height="72" rx="8" fill="#0d1117" stroke="#d29922" stroke-width="1.5"/>
+<text x="624" y="155" class="t zt" fill="#d29922">OBJETS CONNECTÉS</text>
+<text x="624" y="172" class="t zd">TV · prises · capteurs</text>
+<text x="624" y="191" class="m" font-size="10" fill="#d29922" opacity=".8">VLAN objets · DHCP</text>
+<path d="M610 168 L508 300" stroke="#d29922" stroke-opacity=".55" stroke-width="2" fill="none"/>
+<rect x="610" y="230" width="250" height="72" rx="8" fill="#0d1117" stroke="#db61a2" stroke-width="1.5"/>
+<text x="624" y="253" class="t zt" fill="#db61a2">INVITÉS</text>
+<text x="624" y="270" class="t zd">Internet uniquement</text>
+<text x="624" y="289" class="m" font-size="10" fill="#db61a2" opacity=".8">VLAN invités · DHCP</text>
+<path d="M610 266 L508 300" stroke="#db61a2" stroke-opacity=".55" stroke-width="2" fill="none"/>
+<rect x="610" y="328" width="250" height="72" rx="8" fill="#0d1117" stroke="#bc8cff" stroke-width="1.5"/>
+<text x="624" y="351" class="t zt" fill="#bc8cff">LABORATOIRE</text>
+<text x="624" y="368" class="t zd">exercices de formation</text>
+<text x="624" y="387" class="m" font-size="10" fill="#bc8cff" opacity=".8">VLAN lab · isolé</text>
+<path d="M610 364 L508 300" stroke="#bc8cff" stroke-opacity=".55" stroke-width="2" fill="none"/>
+<rect x="392" y="286" width="116" height="30" rx="5" fill="#0d1117" stroke="#e6edf3" stroke-width="1.4"/>
+<rect x="400.0" y="300" width="7" height="9" rx="1" fill="#f0883e"/>
+<rect x="410.4" y="300" width="7" height="9" rx="1" fill="#58a6ff"/>
+<rect x="420.8" y="300" width="7" height="9" rx="1" fill="#3fb950"/>
+<rect x="431.2" y="300" width="7" height="9" rx="1" fill="#d29922"/>
+<rect x="441.6" y="300" width="7" height="9" rx="1" fill="#db61a2"/>
+<rect x="452.0" y="300" width="7" height="9" rx="1" fill="#bc8cff"/>
+<rect x="462.4" y="300" width="7" height="9" rx="1" fill="#30363d"/>
+<rect x="472.8" y="300" width="7" height="9" rx="1" fill="#30363d"/>
+<rect x="483.2" y="300" width="7" height="9" rx="1" fill="#30363d"/>
+<rect x="493.6" y="300" width="7" height="9" rx="1" fill="#30363d"/>
+<text x="450" y="297" text-anchor="middle" class="m" font-size="9.5" fill="#e6edf3">2 × Cisco 2960</text>
+<text x="450" y="333" text-anchor="middle" class="m ns">ports inutilisés éteints</text><text x="450" y="347" text-anchor="middle" class="m ns">VLAN natif remplacé</text>
+<line x1="450" y1="286" x2="450" y2="136" stroke="#8b949e" stroke-width="5"/><line x1="450" y1="286" x2="450" y2="136" stroke="#0d1117" stroke-width="2.5" class="trunk"/>
+<text x="460" y="236" class="m ns">trunk 802.1Q</text>
+<rect x="340" y="84" width="220" height="52" rx="8" fill="#0d1117" stroke="#f85149" stroke-width="1.8"/>
+<g transform="translate(354,96)" fill="none" stroke="#f85149" stroke-width="1.6"><rect width="30" height="28" rx="2"/><path d="M0 9h30M0 19h30M10 0v9M20 9v10M10 19v9"/></g>
+<text x="396" y="106" class="t nl">Pare-feu · Cisco 2911</text><text x="396" y="124" class="m ns">routage · NAT · filtrage</text>
+<g transform="translate(0,-48)"><path d="M716 120 a20 20 0 0 1 36 -8 a16 16 0 0 1 28 10 a14 14 0 0 1 -4 28 h-58 a15 15 0 0 1 -2 -30z" fill="#161b22" stroke="#8b949e" stroke-width="1.4"/><text x="747" y="140" text-anchor="middle" class="t" font-size="11.5" font-weight="700" fill="#e6edf3">Internet</text></g>
+<path d="M560 110 L690 110 L716 88" stroke="#8b949e" stroke-width="2" fill="none"/><text x="625" y="102" text-anchor="middle" class="m ns">box · NAT</text>
+<circle r="5.5" fill="#db61a2" stroke="#0d1117" stroke-width="1.5" opacity="0"><animateMotion dur="19.2s" repeatCount="indefinite" path="M610 266 L508 300 L450 286 L450 136" keyPoints="0;0;1;1" keyTimes="0.0000;0.0078;0.0599;1.0000" calcMode="linear"/><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.0078;0.0088;0.1120;0.1130;1.0000"/></circle>
+<g opacity="0"><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.0078;0.0088;0.1198;0.1208;1.0000"/><rect x="34" y="410" width="832" height="56" rx="8" fill="#0d1117" stroke="#f85149" stroke-opacity=".6"/><text x="50" y="432" class="m ns">TEST 01/08</text><text x="50" y="453" class="t nl">INVITÉS → SERVICES</text><rect x="642" y="424" width="210" height="28" rx="14" fill="#f85149" fill-opacity=".15" stroke="#f85149"/><text x="747" y="443" text-anchor="middle" class="m" font-size="12" font-weight="700" fill="#f85149">✕ refusé · règle comptée +1</text></g>
+<g opacity="0"><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.0599;0.0609;0.1198;0.1208;1.0000"/><circle cx="450" cy="158" r="13" fill="#0d1117" stroke="#f85149" stroke-width="2.2"/><path d="M444 152 l12 12 M456 152 l-12 12" stroke="#f85149" stroke-width="2.4" stroke-linecap="round"/></g>
+<circle r="5.5" fill="#3fb950" stroke="#0d1117" stroke-width="1.5" opacity="0"><animateMotion dur="19.2s" repeatCount="indefinite" path="M290 364 L392 300 L450 286 L450 136 L450 136 L450 286 L392 300 L290 266" keyPoints="0;0;1;1" keyTimes="0.0000;0.1328;0.2370;1.0000" calcMode="linear"/><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.1328;0.1338;0.2370;0.2380;1.0000"/></circle>
+<g opacity="0"><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.1328;0.1338;0.2448;0.2458;1.0000"/><rect x="34" y="410" width="832" height="56" rx="8" fill="#0d1117" stroke="#3fb950" stroke-opacity=".6"/><text x="50" y="432" class="m ns">TEST 02/08</text><text x="50" y="453" class="t nl">UTILISATEURS → SERVICES</text><rect x="712" y="424" width="140" height="28" rx="14" fill="#3fb950" fill-opacity=".15" stroke="#3fb950"/><text x="782" y="443" text-anchor="middle" class="m" font-size="12" font-weight="700" fill="#3fb950">✓ autorisé</text></g>
+<circle r="5.5" fill="#3fb950" stroke="#0d1117" stroke-width="1.5" opacity="0"><animateMotion dur="19.2s" repeatCount="indefinite" path="M290 364 L392 300 L450 286 L450 136" keyPoints="0;0;1;1" keyTimes="0.0000;0.2578;0.3099;1.0000" calcMode="linear"/><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.2578;0.2588;0.3620;0.3630;1.0000"/></circle>
+<g opacity="0"><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.2578;0.2588;0.3698;0.3708;1.0000"/><rect x="34" y="410" width="832" height="56" rx="8" fill="#0d1117" stroke="#f85149" stroke-opacity=".6"/><text x="50" y="432" class="m ns">TEST 03/08</text><text x="50" y="453" class="t nl">UTILISATEURS → ADMINISTRATION</text><rect x="642" y="424" width="210" height="28" rx="14" fill="#f85149" fill-opacity=".15" stroke="#f85149"/><text x="747" y="443" text-anchor="middle" class="m" font-size="12" font-weight="700" fill="#f85149">✕ refusé</text></g>
+<g opacity="0"><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.3099;0.3109;0.3698;0.3708;1.0000"/><circle cx="450" cy="158" r="13" fill="#0d1117" stroke="#f85149" stroke-width="2.2"/><path d="M444 152 l12 12 M456 152 l-12 12" stroke="#f85149" stroke-width="2.4" stroke-linecap="round"/></g>
+<circle r="5.5" fill="#d29922" stroke="#0d1117" stroke-width="1.5" opacity="0"><animateMotion dur="19.2s" repeatCount="indefinite" path="M610 168 L508 300 L450 286 L450 136 L450 110 L560 110 L690 110 L716 88" keyPoints="0;0;1;1" keyTimes="0.0000;0.3828;0.4870;1.0000" calcMode="linear"/><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.3828;0.3838;0.4870;0.4880;1.0000"/></circle>
+<g opacity="0"><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.3828;0.3838;0.4948;0.4958;1.0000"/><rect x="34" y="410" width="832" height="56" rx="8" fill="#0d1117" stroke="#3fb950" stroke-opacity=".6"/><text x="50" y="432" class="m ns">TEST 04/08</text><text x="50" y="453" class="t nl">OBJETS CONNECTÉS → INTERNET</text><rect x="712" y="424" width="140" height="28" rx="14" fill="#3fb950" fill-opacity=".15" stroke="#3fb950"/><text x="782" y="443" text-anchor="middle" class="m" font-size="12" font-weight="700" fill="#3fb950">✓ autorisé</text></g>
+<circle r="5.5" fill="#d29922" stroke="#0d1117" stroke-width="1.5" opacity="0"><animateMotion dur="19.2s" repeatCount="indefinite" path="M610 168 L508 300 L450 286 L450 136" keyPoints="0;0;1;1" keyTimes="0.0000;0.5078;0.5599;1.0000" calcMode="linear"/><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.5078;0.5088;0.6120;0.6130;1.0000"/></circle>
+<g opacity="0"><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.5078;0.5088;0.6198;0.6208;1.0000"/><rect x="34" y="410" width="832" height="56" rx="8" fill="#0d1117" stroke="#f85149" stroke-opacity=".6"/><text x="50" y="432" class="m ns">TEST 05/08</text><text x="50" y="453" class="t nl">OBJETS CONNECTÉS → UTILISATEURS</text><rect x="642" y="424" width="210" height="28" rx="14" fill="#f85149" fill-opacity=".15" stroke="#f85149"/><text x="747" y="443" text-anchor="middle" class="m" font-size="12" font-weight="700" fill="#f85149">✕ refusé</text></g>
+<g opacity="0"><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.5599;0.5609;0.6198;0.6208;1.0000"/><circle cx="450" cy="158" r="13" fill="#0d1117" stroke="#f85149" stroke-width="2.2"/><path d="M444 152 l12 12 M456 152 l-12 12" stroke="#f85149" stroke-width="2.4" stroke-linecap="round"/></g>
+<circle r="5.5" fill="#db61a2" stroke="#0d1117" stroke-width="1.5" opacity="0"><animateMotion dur="19.2s" repeatCount="indefinite" path="M610 266 L508 300 L450 286 L450 136 L450 110 L560 110 L690 110 L716 88" keyPoints="0;0;1;1" keyTimes="0.0000;0.6328;0.7370;1.0000" calcMode="linear"/><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.6328;0.6338;0.7370;0.7380;1.0000"/></circle>
+<g opacity="0"><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.6328;0.6338;0.7448;0.7458;1.0000"/><rect x="34" y="410" width="832" height="56" rx="8" fill="#0d1117" stroke="#3fb950" stroke-opacity=".6"/><text x="50" y="432" class="m ns">TEST 06/08</text><text x="50" y="453" class="t nl">INVITÉS → INTERNET</text><rect x="712" y="424" width="140" height="28" rx="14" fill="#3fb950" fill-opacity=".15" stroke="#3fb950"/><text x="782" y="443" text-anchor="middle" class="m" font-size="12" font-weight="700" fill="#3fb950">✓ autorisé</text></g>
+<circle r="5.5" fill="#f0883e" stroke="#0d1117" stroke-width="1.5" opacity="0"><animateMotion dur="19.2s" repeatCount="indefinite" path="M290 168 L392 300 L450 286 L450 136 L450 136 L450 286 L508 300 L610 364" keyPoints="0;0;1;1" keyTimes="0.0000;0.7578;0.8620;1.0000" calcMode="linear"/><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.7578;0.7588;0.8620;0.8630;1.0000"/></circle>
+<g opacity="0"><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.7578;0.7588;0.8698;0.8708;1.0000"/><rect x="34" y="410" width="832" height="56" rx="8" fill="#0d1117" stroke="#3fb950" stroke-opacity=".6"/><text x="50" y="432" class="m ns">TEST 07/08</text><text x="50" y="453" class="t nl">ADMINISTRATION → LABORATOIRE</text><rect x="712" y="424" width="140" height="28" rx="14" fill="#3fb950" fill-opacity=".15" stroke="#3fb950"/><text x="782" y="443" text-anchor="middle" class="m" font-size="12" font-weight="700" fill="#3fb950">✓ autorisé</text></g>
+<circle r="5.5" fill="#bc8cff" stroke="#0d1117" stroke-width="1.5" opacity="0"><animateMotion dur="19.2s" repeatCount="indefinite" path="M610 364 L508 300 L450 286 L450 136" keyPoints="0;0;1;1" keyTimes="0.0000;0.8828;0.9349;1.0000" calcMode="linear"/><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.8828;0.8838;0.9870;0.9880;1.0000"/></circle>
+<g opacity="0"><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.8828;0.8838;0.9948;0.9958;1.0000"/><rect x="34" y="410" width="832" height="56" rx="8" fill="#0d1117" stroke="#f85149" stroke-opacity=".6"/><text x="50" y="432" class="m ns">TEST 08/08</text><text x="50" y="453" class="t nl">LABORATOIRE → SERVICES</text><rect x="642" y="424" width="210" height="28" rx="14" fill="#f85149" fill-opacity=".15" stroke="#f85149"/><text x="747" y="443" text-anchor="middle" class="m" font-size="12" font-weight="700" fill="#f85149">✕ refusé · zone isolée</text></g>
+<g opacity="0"><animate attributeName="opacity" dur="19.2s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.9349;0.9359;0.9948;0.9958;1.0000"/><circle cx="450" cy="158" r="13" fill="#0d1117" stroke="#f85149" stroke-width="2.2"/><path d="M444 152 l12 12 M456 152 l-12 12" stroke="#f85149" stroke-width="2.4" stroke-linecap="round"/></g>
+<line x1="26" y1="496" x2="874" y2="496" stroke="#30363d"/>
+<text x="26" y="519" class="m" font-size="11.5" fill="#8b949e"><tspan fill="#3fb950">✔</tspan> 6 VLAN · trunks 802.1Q · adressage par usage (IP fixes infra, DHCP postes, objets, invités)</text>
+<text x="26" y="540" class="m" font-size="11.5" fill="#8b949e"><tspan fill="#3fb950">✔</tspan> routage inter-zones et NAT · matrice des flux, refus par défaut   <tspan fill="#3fb950">✔</tspan> 9 tests de filtrage conformes</text>
+<text x="26" y="561" class="m" font-size="11.5" fill="#8b949e"><tspan fill="#d29922">💡</tspan> filtrage d'un routeur « sans état » : les réponses doivent être autorisées explicitement</text>
+</svg>
