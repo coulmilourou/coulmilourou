@@ -57,7 +57,7 @@
 | 🐧 | **Systèmes Linux** | Ligne de commande · utilisateurs, groupes, permissions · intégration à un domaine AD (**realmd · sssd · Kerberos**) · synchronisation horaire (**chrony**) |
 | 🧩 | **Virtualisation** | **Proxmox VE** (hyperviseur de type 1, bridges Linux `vmbr`) · **KVM / QEMU / libvirt** · réseaux virtuels isolés · UEFI Secure Boot · conception d'un lab multi-VM |
 | ⚙️ | **Automatisation** | **PowerShell** (provisioning AD depuis CSV) · Bash · Git |
-| 🔐 | **Sécurité** | Pare-feu **OPNsense** (règles, NAT, cloisonnement de réseaux) · **iptables** (NAT, DNAT, persistance) · VPN **WireGuard** · bonnes pratiques et hygiène informatique · moindre privilège · séparation lab / production |
+| 🔐 | **Sécurité** | Segmentation par zones et **matrice des flux** (refus par défaut) · durcissement des switchs (ports inutilisés désactivés, VLAN natif remplacé) · pare-feu **OPNsense** (règles, NAT, cloisonnement de réseaux) · **iptables** (NAT, DNAT, persistance) · VPN **WireGuard** · bonnes pratiques et hygiène informatique · moindre privilège · séparation lab / production |
 
 <details open>
 <summary><b>🧰 Stack technique</b></summary>
@@ -114,6 +114,33 @@ Une **PME simulée** de bout en bout : un domaine, des services, des utilisateur
 
 ---
 
+## `$ cat ~/labs/multi-site/README.md` · Lab multi-site
+
+Une infrastructure pensée pour **plusieurs sites**, conçue puis entièrement simulée et testée dans **Cisco Packet Tracer** avant l'achat du moindre équipement : convention de nommage, dossier d'architecture, puis validation par des tests de filtrage.
+
+<p align="center">
+  <img src="./assets/lab-multisite.svg" alt="Lab multi-site : six zones VLAN derrière un pare-feu Cisco 2911, trunk 802.1Q, matrice des flux avec refus par défaut, tests de filtrage animés" width="100%">
+</p>
+
+**🧠 Principe retenu : segmenter n'est pas filtrer.** Premier test après la segmentation : un ping du réseau invités vers le stockage… et il répond. Les zones étaient séparées sur les switchs, mais le pare-feu les reliait toutes. D'où une **matrice des flux** : qui a le droit de joindre qui, et pourquoi. Tout ce qui n'est pas explicitement autorisé est interdit.
+
+| Zone source | Peut joindre | Ne peut pas joindre |
+|---|---|---|
+| 🛠️ **Administration** | toutes les zones, pour les gérer | — *(et aucune zone ne peut l'atteindre)* |
+| 💻 **Utilisateurs** | services · Internet | administration · autres zones |
+| 📡 **Objets connectés** | domotique · Internet | utilisateurs · administration · autres zones |
+| 👋 **Invités** | Internet | toutes les zones internes |
+| 🧪 **Laboratoire** | — *(isolé)* | toutes les zones |
+
+Chaque autorisation répond à deux questions : **quel est le besoin**, et **quel est le risque si l'appareil est compromis ?** Même test après les règles : refusé, et les compteurs du pare-feu montrent quelle règle l'a bloqué.
+
+**🗺️ Suite du lab**
+- [ ] Wi-Fi segmenté : un réseau sans fil par zone, soumis aux mêmes règles
+- [ ] Site B relié par un tunnel VPN **WireGuard** chiffré
+- [ ] Passage au matériel réel
+
+---
+
 ## `$ ls ~/ateliers` · Virtualisation, sécurité, réseau & support
 
 Des mises en situation d'entreprise réalisées pendant la formation, sur serveur dédié, **Cisco Packet Tracer** et **GLPI**.
@@ -147,6 +174,7 @@ Des mises en situation d'entreprise réalisées pendant la formation, sur serveu
 
 | | Projet | Domaine | Description |
 |:-:|---|---|---|
+| 🛡️ | **Lab multi-site** | Réseau · sécurité | 6 zones VLAN derrière un pare-feu, trunks 802.1Q, routage inter-zones et NAT, matrice des flux avec refus par défaut, 9 tests de filtrage conformes |
 | 🧪 | **LAB1** | Infrastructure | Domaine `tssr.local` complet sous KVM : AD, DNS, DHCP, serveur de fichiers, 5 postes Windows 11 et 3 postes Linux intégrés au domaine |
 | 🎓 | **Eduko** | SaaS | Plateforme de gestion scolaire pour l'Afrique de l'Ouest, avec un hébergement pensé pour la localisation des données (UEMOA) |
 | ⚙️ | **Automatisation** | Ops · R&D | Workflows **n8n** et agents IA conteneurisés sous **Docker** |
