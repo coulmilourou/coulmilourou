@@ -65,7 +65,7 @@
     <text x="290" y="52" class="ln" style="animation-delay:.2s"><tspan fill="#3fb950" font-weight="700">milourou</tspan><tspan class="d">@</tspan><tspan fill="#3fb950" font-weight="700">lab1</tspan></text>
     <text x="290" y="70" class="d ln" style="animation-delay:.3s">────────────────────────────────────────</text>
     <text x="290" y="96"  class="ln" style="animation-delay:.5s"><tspan class="k">Titre</tspan><tspan class="v" x="392">Administrateur d'Infrastructures Sécurisées</tspan></text>
-    <text x="290" y="120" class="ln" style="animation-delay:.7s"><tspan class="k">Niveau</tspan><tspan class="v" x="392">RNCP 37680 · niveau 6 (bac+3/4)</tspan></text>
+    <text x="290" y="120" class="ln" style="animation-delay:.7s"><tspan class="k">Niveau</tspan><tspan class="v" x="392">RNCP 37680 · niveau 6 (bac+3)</tspan></text>
     <text x="290" y="144" class="ln" style="animation-delay:.9s"><tspan class="k">Uptime</tspan><tspan class="v" x="392">passionné d'informatique depuis 2010</tspan></text>
     <text x="290" y="168" class="ln" style="animation-delay:1.1s"><tspan class="k">Shells</tspan><tspan class="v" x="392">PowerShell · Bash · Cisco IOS</tspan></text>
     <text x="290" y="192" class="ln" style="animation-delay:1.3s"><tspan class="k">Lab</tspan><tspan class="v" x="392">Proxmox VE · KVM · 10 VM · 1 domaine AD</tspan></text>

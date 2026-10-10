@@ -46,7 +46,7 @@
     <!-- 3 -->
     <text x="24" y="182" class="ln" style="animation-delay:3.2s"><tspan class="p">milourou@lab1</tspan><tspan class="out">:</tspan><tspan class="path">~</tspan><tspan class="out">$ </tspan><tspan class="cmd">history | grep parcours</tspan></text>
     <text x="24" y="204" class="ln" style="animation-delay:3.9s"><tspan class="out">  2010  </tspan><tspan class="cmd">premiers PC montés, autodidacte</tspan></text>
-    <text x="24" y="226" class="ln" style="animation-delay:4.2s"><tspan class="out">  2023  </tspan><tspan class="cmd">licence audiovisuel &amp; communication — et l'IT toujours en fond</tspan></text>
+    <text x="24" y="226" class="ln" style="animation-delay:4.2s"><tspan class="out">  2023  </tspan><tspan class="cmd">licence pro cinéma &amp; audiovisuel — et l'IT toujours en fond</tspan></text>
     <text x="24" y="248" class="ln" style="animation-delay:4.5s"><tspan class="out">  2026  </tspan><tspan class="acc">reconversion assumée : audiovisuel → infrastructures &amp; cybersécurité</tspan></text>
 
     <!-- 4 -->

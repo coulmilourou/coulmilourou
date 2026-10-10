@@ -1,58 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="504" viewBox="0 0 900 504" role="img" aria-label="Parcours de Milourou sous forme de git log : de l'autodidacte en 2010 à la reconversion vers l'AIS">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="458" viewBox="0 0 900 458" role="img" aria-label="Parcours de Milourou sous forme de git log : de l'autodidacte en 2010 à la formation AIS">
 <style>
 .m{font-family:ui-monospace,SFMono-Regular,Consolas,Menlo,"DejaVu Sans Mono",monospace}
 .h{fill:#d29922;font-size:12.5px}.yr{fill:#8b949e;font-size:12.5px}.ty{font-size:12px;font-weight:700}
 .msg{fill:#e6edf3;font-size:13px}.note{fill:#6e7681;font-size:11.5px}
-
 .glow{animation:g 2s ease-in-out infinite}@keyframes g{50%{opacity:.3}}
-@media (prefers-reduced-motion:reduce){.r{animation:none;opacity:1}.glow{animation:none}}
+@media (prefers-reduced-motion:reduce){.glow{animation:none}}
 </style>
-<rect x="1" y="1" width="898" height="502" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+<rect x="1" y="1" width="898" height="456" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
 <text x="24" y="38" class="m" font-size="14"><tspan fill="#3fb950" font-weight="700">milourou@lab1</tspan><tspan fill="#8b949e">:</tspan><tspan fill="#58a6ff" font-weight="700">~/parcours</tspan><tspan fill="#8b949e">$ </tspan><tspan fill="#e6edf3">git log --graph --oneline --all</tspan></text>
-<line x1="56" y1="70" x2="56" y2="438" stroke="#3fb950" stroke-width="2.5"/>
+<line x1="56" y1="116" x2="56" y2="392" stroke="#3fb950" stroke-width="2.5"/>
 <line x1="56" y1="70" x2="56" y2="116" stroke="#6e7681" stroke-width="2.5" stroke-dasharray="4 4"/>
-<path d="M56 366 C56 342,96 356,96 300 L96 162 C96 134,56 132,56 116" fill="none" stroke="#bc8cff" stroke-width="2.5"/>
+<path d="M56 346 C56 322,96 324,96 300 L96 162 C96 134,56 132,56 116" fill="none" stroke="#bc8cff" stroke-width="2.5"/>
 <text x="104" y="189" class="m" font-size="10.5" fill="#bc8cff" opacity=".8">audiovisuel</text>
-<g class="r" style="animation-delay:1.20s">
 <circle cx="56" cy="70" r="7" fill="#0d1117" stroke="#f0883e" stroke-width="2" stroke-dasharray="3 2" class="glow"/>
 <text x="140" y="74.5" class="m"><tspan class="h">a1s2027</tspan><tspan class="yr" dx="12">2027</tspan><tspan class="ty" dx="12" fill="#f0883e">feat:</tspan><tspan class="msg" dx="8">AIS — Titre Pro niveau 6 · stage 350 h · Dossier Projet</tspan></text>
 <text x="876" y="88" text-anchor="end" class="m note">HEAD → objectif</text>
-</g>
-<g class="r" style="animation-delay:1.05s">
 <circle cx="56" cy="116" r="8" fill="#58a6ff"/><circle cx="56" cy="116" r="3.5" fill="#0d1117"/>
 <text x="140" y="120.5" class="m"><tspan class="h">m3rg26e</tspan><tspan class="yr" dx="12">2026</tspan><tspan class="ty" dx="12" fill="#58a6ff">merge:</tspan><tspan class="msg" dx="8">reconversion : audiovisuel → infrastructures &amp; cybersécurité</tspan></text>
 <text x="876" y="134" text-anchor="end" class="m note">AIS O'clock · LAB1</text>
-</g>
-<g class="r" style="animation-delay:0.90s">
 <circle cx="56" cy="162" r="6" fill="#3fb950" stroke="#0d1117" stroke-width="2"/>
 <text x="140" y="166.5" class="m"><tspan class="h">c3rt25g</tspan><tspan class="yr" dx="12">2025</tspan><tspan class="ty" dx="12" fill="#39c5cf">cert:</tspan><tspan class="msg" dx="8">Google IT Support · 4 cours certifiés (Coursera)</tspan></text>
-</g>
-<g class="r" style="animation-delay:0.75s">
 <circle cx="56" cy="208" r="6" fill="#3fb950" stroke="#0d1117" stroke-width="2"/>
-<text x="140" y="212.5" class="m"><tspan class="h">4h0k022</tspan><tspan class="yr" dx="12">2022</tspan><tspan class="ty" dx="12" fill="#3fb950">work:</tspan><tspan class="msg" dx="8">Technicien IT · AHOKO MEDIA — migration Office 365, sécurité des postes</tspan></text>
-<text x="876" y="226" text-anchor="end" class="m note">2022–2023</text>
-</g>
-<g class="r" style="animation-delay:0.60s">
+<text x="140" y="212.5" class="m"><tspan class="h">4h0k023</tspan><tspan class="yr" dx="12">2023</tspan><tspan class="ty" dx="12" fill="#3fb950">work:</tspan><tspan class="msg" dx="8">Dirigeant · AHOKO MEDIA — parc informatique, sauvegardes</tspan></text>
+<text x="876" y="226" text-anchor="end" class="m note">juin–déc. 2023</text>
 <circle cx="96" cy="254" r="6" fill="#bc8cff" stroke="#0d1117" stroke-width="2"/>
-<text x="140" y="258.5" class="m"><tspan class="h">e5ma020</tspan><tspan class="yr" dx="12">2020</tspan><tspan class="ty" dx="12" fill="#bc8cff">edu:</tspan><tspan class="msg" dx="8">Licence Audiovisuel &amp; Communication · ESMA</tspan></text>
+<text x="140" y="258.5" class="m"><tspan class="h">e5ma020</tspan><tspan class="yr" dx="12">2020</tspan><tspan class="ty" dx="12" fill="#bc8cff">edu:</tspan><tspan class="msg" dx="8">Licence pro Cinéma &amp; Audiovisuel · option Réalisation · ESMA</tspan></text>
 <text x="876" y="272" text-anchor="end" class="m note">2020–2023</text>
-</g>
-<g class="r" style="animation-delay:0.45s">
 <circle cx="96" cy="300" r="6" fill="#bc8cff" stroke="#0d1117" stroke-width="2"/>
-<text x="140" y="304.5" class="m"><tspan class="h">mzk2020</tspan><tspan class="yr" dx="12">2020</tspan><tspan class="ty" dx="12" fill="#3fb950">work:</tspan><tspan class="msg" dx="8">Coordinateur technique · MZK Group</tspan></text>
+<text x="140" y="304.5" class="m"><tspan class="h">mzk2020</tspan><tspan class="yr" dx="12">2020</tspan><tspan class="ty" dx="12" fill="#3fb950">work:</tspan><tspan class="msg" dx="8">Assistant Webmaster · MZK Group — WordPress, Joomla, support</tspan></text>
 <text x="876" y="318" text-anchor="end" class="m note">2020–2021</text>
-</g>
-<g class="r" style="animation-delay:0.30s">
 <circle cx="56" cy="346" r="6" fill="#3fb950" stroke="#0d1117" stroke-width="2"/>
-<text x="140" y="350.5" class="m"><tspan class="h">1s1sci0</tspan><tspan class="yr" dx="12">   —</tspan><tspan class="ty" dx="12" fill="#3fb950">biz:</tspan><tspan class="msg" dx="8">ISIS · structure de support &amp; infogérance</tspan></text>
-</g>
-<g class="r" style="animation-delay:0.15s">
+<text x="140" y="350.5" class="m"><tspan class="h">k3c2011</tspan><tspan class="yr" dx="12">2011</tspan><tspan class="ty" dx="12" fill="#3fb950">work:</tspan><tspan class="msg" dx="8">Gérant · cybercafé KEC INCO — maintenance des postes, assistance</tspan></text>
+<text x="876" y="364" text-anchor="end" class="m note">2011–2014</text>
 <circle cx="56" cy="392" r="6" fill="#3fb950" stroke="#0d1117" stroke-width="2"/>
-<text x="140" y="396.5" class="m"><tspan class="h">k3c2011</tspan><tspan class="yr" dx="12">2011</tspan><tspan class="ty" dx="12" fill="#3fb950">work:</tspan><tspan class="msg" dx="8">Gérant · cybercafé KEC INCO — support utilisateurs au quotidien</tspan></text>
-<text x="876" y="410" text-anchor="end" class="m note">2011–2014</text>
-</g>
-<g class="r" style="animation-delay:0.00s">
-<circle cx="56" cy="438" r="6" fill="#3fb950" stroke="#0d1117" stroke-width="2"/>
-<text x="140" y="442.5" class="m"><tspan class="h">0init10</tspan><tspan class="yr" dx="12">2010</tspan><tspan class="ty" dx="12" fill="#8b949e">init:</tspan><tspan class="msg" dx="8">premiers PC montés, dépannage, autodidacte</tspan></text>
-</g>
+<text x="140" y="396.5" class="m"><tspan class="h">0init10</tspan><tspan class="yr" dx="12">2010</tspan><tspan class="ty" dx="12" fill="#8b949e">init:</tspan><tspan class="msg" dx="8">premiers PC montés, dépannage, autodidacte</tspan></text>
 </svg>
