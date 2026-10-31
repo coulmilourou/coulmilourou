@@ -53,7 +53,7 @@
 | 🖥️ | **Poste de travail & matériel** | Architecture d'un ordinateur, composants, connectique · BIOS / UEFI · MBR / GPT · installation et dépannage Windows et Linux |
 | 🎧 | **Centre de services** | Qualification d'incidents (impact × urgence) · diagnostic Windows (observateur d'événements, Sysinternals, `ping`, `netstat`) · prise en main à distance · cycle de vie d'un ticket **GLPI** · bonnes pratiques **ITIL v4** · base de connaissances |
 | 🌐 | **Réseaux** | Modèles **OSI** et **TCP/IP** · Ethernet, MAC, ARP · plans d'adressage **CIDR** et RFC 1918 · **VLAN**, trunk 802.1Q, VLAN natif et de management · routage **inter-VLAN** (switch L3) · routes statiques et par défaut · **NAT/PAT** et redirection de ports · DHCP et **relais DHCP** · ACL standard · Wi-Fi · IPv6 · **Cisco IOS** · SSH |
-| 🪟 | **Systèmes Windows** | Windows Server 2022 · **Active Directory** (OU, utilisateurs, groupes) · DNS · DHCP · serveur de fichiers · partages SMB · permissions **NTFS** |
+| 🪟 | **Systèmes Windows** | Windows Server 2022 / 2025 · Server Core · Windows Admin Center · **Active Directory** (OU, groupes, AGDLP) · **GPO** et `gpresult` · DNS · DHCP · partages SMB, permissions **NTFS**, FSRM · **IIS** · **AD CS** (PKI, HTTPS) · **RDS** / RemoteApp · **WDS** (PXE) · Hyper-V · Windows Server Backup |
 | 🐧 | **Systèmes Linux** | Ligne de commande · utilisateurs, groupes, permissions · intégration à un domaine AD (**realmd · sssd · Kerberos**) · synchronisation horaire (**chrony**) |
 | 🧩 | **Virtualisation** | **Proxmox VE** (hyperviseur de type 1, bridges Linux `vmbr`) · **KVM / QEMU / libvirt** · réseaux virtuels isolés · UEFI Secure Boot · conception d'un lab multi-VM |
 | ⚙️ | **Automatisation** | **PowerShell** (provisioning AD depuis CSV) · Bash · Git |
@@ -64,8 +64,12 @@
 <br>
 
 **Systèmes**<br>
-<img src="https://img.shields.io/badge/Windows_Server-2022-0078D6?style=flat-square" alt="Windows Server 2022">
-<img src="https://img.shields.io/badge/Active_Directory-AD_DS-0078D6?style=flat-square" alt="Active Directory">
+<img src="https://img.shields.io/badge/Windows_Server-2022_·_2025-0078D6?style=flat-square" alt="Windows Server 2022 et 2025">
+<img src="https://img.shields.io/badge/Active_Directory-AD_DS_·_GPO-0078D6?style=flat-square" alt="Active Directory et GPO">
+<img src="https://img.shields.io/badge/IIS-0078D6?style=flat-square" alt="IIS">
+<img src="https://img.shields.io/badge/AD_CS-PKI_·_HTTPS-0078D6?style=flat-square" alt="AD CS">
+<img src="https://img.shields.io/badge/RDS-RemoteApp-0078D6?style=flat-square" alt="RDS RemoteApp">
+<img src="https://img.shields.io/badge/WDS-PXE-0078D6?style=flat-square" alt="WDS PXE">
 <img src="https://img.shields.io/badge/Windows-11_Pro-0078D6?style=flat-square" alt="Windows 11 Pro">
 <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white" alt="Ubuntu">
 <img src="https://img.shields.io/badge/Fedora-51A2DA?style=flat-square&logo=fedora&logoColor=white" alt="Fedora">
@@ -167,6 +171,34 @@ Des mises en situation d'entreprise réalisées pendant la formation, sur serveu
 <p align="center">
   <img src="./assets/cisco-ios.svg" alt="Console Cisco IOS : VLAN, trunk, routage inter-VLAN, relais DHCP, NAT/PAT et route par défaut" width="100%">
 </p>
+
+---
+
+## `$ ls ~/saisons/04-windows-server` · Windows Server
+
+**14 jours, un seul serveur.** Une saison entière de Windows Server 2025 sur le domaine de formation `oclock.lan` : 14 cours, 14 challenges pratiqués sur Proxmox, et une règle tenue du début à la fin : **chaque réglage est vérifié depuis le poste client, jamais depuis le serveur**.
+
+<p align="center">
+  <img src="./assets/windows-server-s4.svg" alt="Saison 4 Windows Server : six chapitres pratiqués sur un serveur Windows Server 2025 du domaine oclock.lan, 23 compétences" width="100%">
+</p>
+
+<details>
+<summary><b>▶️ La saison en vidéo</b></summary>
+<br>
+
+<!-- VIDÉO : dans l'éditeur GitHub, glisser ici le fichier LinkedIn_Saison4_Windows_Server_anime.mp4 -->
+
+</details>
+
+| | Chapitre | Ce que j'ai mis en œuvre | Ce que ça prouve |
+|:-:|---|---|---|
+| 🧱 | **Fondations** | Installation, IP fixe, bureau à distance · Server Core · Windows Admin Center | Un serveur garde son nom et son adresse, et s'administre à distance |
+| 🪪 | **Identité** | AD DS, domaine `oclock.lan` · OU · utilisateurs et groupes selon **AGDLP** | Le serveur devient l'autorité du domaine |
+| 📜 | **Règles** | **GPO** et ordre d'application LSDOU · panne provoquée puis diagnostiquée avec `gpresult` | Une règle s'impose à tout un parc, et quand elle ne s'applique pas, on sait pourquoi |
+| 📁 | **Fichiers** | Partages SMB et **NTFS** · lecteurs mappés par GPO · **FSRM** : quotas et filtrage de fichiers | Entre partage et NTFS, la plus restrictive gagne : vérifié dans l'accès effectif |
+| 🌐 | **Services** | DNS · DHCP · **IIS** (un site, un pool, un compte de service) · **AD CS** et HTTPS | Ma propre autorité de certification : HTTPS sans avertissement sur tout le domaine |
+| 🖥️ | **Postes** | **WDS** et déploiement PXE · **RDS** et RemoteApp · VDI · Hyper-V | Une application tourne sur le serveur et s'affiche comme une appli locale |
+| 🛟 | **Sauvegarde** | Windows Server Backup planifié · restauration d'un fichier et procédure pour une OU supprimée | Une sauvegarde ne vaut que si la restauration a été testée |
 
 ---
 
