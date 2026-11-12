@@ -54,7 +54,7 @@
 | 🎧 | **Centre de services** | Qualification d'incidents (impact × urgence) · diagnostic Windows (observateur d'événements, Sysinternals, `ping`, `netstat`) · prise en main à distance · cycle de vie d'un ticket **GLPI** · bonnes pratiques **ITIL v4** · base de connaissances |
 | 🌐 | **Réseaux** | Modèles **OSI** et **TCP/IP** · Ethernet, MAC, ARP · plans d'adressage **CIDR** et RFC 1918 · **VLAN**, trunk 802.1Q, VLAN natif et de management · routage **inter-VLAN** (switch L3) · routes statiques et par défaut · **NAT/PAT** et redirection de ports · DHCP et **relais DHCP** · ACL standard · Wi-Fi · IPv6 · **Cisco IOS** · SSH |
 | 🪟 | **Systèmes Windows** | Windows Server 2022 / 2025 · Server Core · Windows Admin Center · **Active Directory** (OU, groupes, AGDLP) · **GPO** et `gpresult` · DNS · DHCP · partages SMB, permissions **NTFS**, FSRM · **IIS** · **AD CS** (PKI, HTTPS) · **RDS** / RemoteApp · **WDS** (PXE) · Hyper-V · Windows Server Backup |
-| 🐧 | **Systèmes Linux** | Ligne de commande · utilisateurs, groupes, permissions · intégration à un domaine AD (**realmd · sssd · Kerberos**) · synchronisation horaire (**chrony**) |
+| 🐧 | **Systèmes Linux** | Debian et **Rocky Linux** en ligne de commande · SSH par clés · utilisateurs, groupes, permissions, SGID, **sudo ciblé** · **systemd** (services, timers) et **journalctl** · paquets `apt`/`dnf` et compilation depuis les sources · Apache, LAMP, GLPI · **Samba** (partages et contrôleur AD) · proxy **Squid** · `firewalld` · cron · intégration à un domaine AD (**realmd · sssd · Kerberos**) · **chrony** |
 | 🧩 | **Virtualisation** | **Proxmox VE** (hyperviseur de type 1, bridges Linux `vmbr`) · **KVM / QEMU / libvirt** · réseaux virtuels isolés · UEFI Secure Boot · conception d'un lab multi-VM |
 | ⚙️ | **Automatisation** | **PowerShell** (provisioning AD depuis CSV) · Bash · Git |
 | 🔐 | **Sécurité** | Segmentation par zones et **matrice des flux** (refus par défaut) · durcissement des switchs (ports inutilisés désactivés, VLAN natif remplacé) · pare-feu **OPNsense** (règles, NAT, cloisonnement de réseaux) · **iptables** (NAT, DNAT, persistance) · VPN **WireGuard** · bonnes pratiques et hygiène informatique · moindre privilège · séparation lab / production |
@@ -74,6 +74,12 @@
 <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white" alt="Ubuntu">
 <img src="https://img.shields.io/badge/Fedora-51A2DA?style=flat-square&logo=fedora&logoColor=white" alt="Fedora">
 <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux">
+<img src="https://img.shields.io/badge/Debian-A81D33?style=flat-square&logo=debian&logoColor=white" alt="Debian">
+<img src="https://img.shields.io/badge/Rocky_Linux-10B981?style=flat-square&logo=rockylinux&logoColor=white" alt="Rocky Linux">
+<img src="https://img.shields.io/badge/systemd-30363d?style=flat-square" alt="systemd">
+<img src="https://img.shields.io/badge/Apache-D22128?style=flat-square&logo=apache&logoColor=white" alt="Apache">
+<img src="https://img.shields.io/badge/Samba-AD_DC-30363d?style=flat-square" alt="Samba AD DC">
+<img src="https://img.shields.io/badge/Squid-proxy-30363d?style=flat-square" alt="Squid">
 
 **Réseau**<br>
 <img src="https://img.shields.io/badge/Cisco-IOS-1BA0D7?style=flat-square&logo=cisco&logoColor=white" alt="Cisco IOS">
@@ -182,14 +188,6 @@ Des mises en situation d'entreprise réalisées pendant la formation, sur serveu
   <img src="./assets/windows-server-s4.svg" alt="Saison 4 Windows Server : six chapitres pratiqués sur un serveur Windows Server 2025 du domaine oclock.lan, 23 compétences" width="100%">
 </p>
 
-<details>
-<summary><b>▶️ La saison en vidéo</b></summary>
-<br>
-
-<!-- VIDÉO : dans l'éditeur GitHub, glisser ici le fichier LinkedIn_Saison4_Windows_Server_anime.mp4 -->
-
-</details>
-
 | | Chapitre | Ce que j'ai mis en œuvre | Ce que ça prouve |
 |:-:|---|---|---|
 | 🧱 | **Fondations** | Installation, IP fixe, bureau à distance · Server Core · Windows Admin Center | Un serveur garde son nom et son adresse, et s'administre à distance |
@@ -199,6 +197,29 @@ Des mises en situation d'entreprise réalisées pendant la formation, sur serveu
 | 🌐 | **Services** | DNS · DHCP · **IIS** (un site, un pool, un compte de service) · **AD CS** et HTTPS | Ma propre autorité de certification : HTTPS sans avertissement sur tout le domaine |
 | 🖥️ | **Postes** | **WDS** et déploiement PXE · **RDS** et RemoteApp · VDI · Hyper-V | Une application tourne sur le serveur et s'affiche comme une appli locale |
 | 🛟 | **Sauvegarde** | Windows Server Backup planifié · restauration d'un fichier et procédure pour une OU supprimée | Une sauvegarde ne vaut que si la restauration a été testée |
+
+---
+
+## `$ ls ~/saisons/05-linux` · Administration Linux
+
+**Un serveur, un terminal, pas d'interface graphique.** 8 épisodes d'administration Linux en ligne de commande, à distance par SSH, sur les deux grandes familles de distributions : **Debian 12/13** et **Rocky Linux 9/10** (famille Red Hat), en VM sur Proxmox.
+
+<p align="center">
+  <img src="./assets/linux-s5.svg" alt="Saison 5 Administration Linux : six chapitres rejoués dans un terminal fish, de la prise en main SSH à la promotion de Samba en contrôleur Active Directory" width="100%">
+</p>
+
+| | Chapitre | Ce que j'ai mis en œuvre | Ce que ça prouve |
+|:-:|---|---|---|
+| 🔑 | **Prendre la main d'un serveur** | SSH par clés `ed25519` · `hostnamectl`, `ip a`, `ss -tulpn`, `df -h`, `systemctl --failed` | Cartographier une machine inconnue sans interface graphique |
+| 👥 | **Comptes, droits et accès** | Utilisateurs et groupes · permissions octales et symboliques · dossier partagé **SGID** · **sudo ciblé** (`sudoers.d`, `Cmnd_Alias`) · audit des comptes UID 0 | Qui peut faire quoi, et rien de plus |
+| 📦 | **Installer et compiler proprement** | `apt`/`dpkg` et `dnf`/`rpm` · recherche inverse de paquet · compilation `./configure` + `make` · paquet `-dev` manquant · `checkinstall` | Le paquet d'abord, la compilation quand il le faut |
+| 🩺 | **Diagnostiquer** | `journalctl` (unité, priorité, démarrage précédent) · `/var/log` selon la famille · `apachectl configtest` · `du \| sort` · purge de journald, `logrotate` | Les logs avant Google |
+| 🌐 | **Servir, filtrer, sauvegarder** | LAMP + **GLPI 11** · VirtualHosts Apache · **Samba** (double couche de permissions) · proxy **Squid** et ACL · `firewalld` · **timer systemd** et cron · restauration testée | Web, partage, proxy, sauvegarde : déployés et vérifiés |
+| 🏰 | **Promouvoir un contrôleur de domaine** | **Samba compilé depuis les sources**, promu contrôleur **Active Directory** (Kerberos, DNS, LDAP) · groupes `GG_`/`GL_` · poste Windows joint au domaine · GPO appliquée | Un contrôleur de domaine AD entièrement libre |
+
+**🕵️ Mission finale : reprise d'un serveur inconnu.** Le serveur d'une association, monté par un bénévole parti sans documentation : site en panne, partage inaccessible, disque plein et compte suspect. Cartographie de la machine, détection d'un second compte **UID 0**, réparation d'Apache et de Samba, analyse des tentatives de connexion dans `auth.log`, libération de `/var`.
+
+> **Réflexes retenus** · les logs avant Google · le paquet d'abord, la compilation quand il le faut · deux portes, la plus fermée gagne · une sauvegarde jamais restaurée n'est pas une sauvegarde
 
 ---
 
