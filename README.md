@@ -92,9 +92,12 @@
 | 🌐 | **Réseaux** | Modèles **OSI** et **TCP/IP** · Ethernet, MAC, ARP · plans d'adressage **CIDR** et RFC 1918 · **VLAN**, trunk 802.1Q, VLAN natif et de management · routage **inter-VLAN** (switch L3) · routes statiques et par défaut · **NAT/PAT** et redirection de ports · DHCP et **relais DHCP** · ACL standard · Wi-Fi · IPv6 · **Cisco IOS** · SSH |
 | 🪟 | **Systèmes Windows** | Windows Server 2022 / 2025 · Server Core · Windows Admin Center · **Active Directory** (OU, groupes, AGDLP) · **GPO** et `gpresult` · DNS · DHCP · partages SMB, permissions **NTFS**, FSRM · **IIS** · **AD CS** (PKI, HTTPS) · **RDS** / RemoteApp · **WDS** (PXE) · Hyper-V · Windows Server Backup |
 | 🐧 | **Systèmes Linux** | Debian et **Rocky Linux** en ligne de commande · SSH par clés · utilisateurs, groupes, permissions, SGID, **sudo ciblé** · **systemd** (services, timers) et **journalctl** · paquets `apt`/`dnf` et compilation depuis les sources · Apache, LAMP, GLPI · **Samba** (partages et contrôleur AD) · proxy **Squid** · `firewalld` · cron · intégration à un domaine AD (**realmd · sssd · Kerberos**) · **chrony** |
-| 🧩 | **Virtualisation** | **Proxmox VE** (hyperviseur de type 1, bridges Linux `vmbr`) · **KVM / QEMU / libvirt** · réseaux virtuels isolés · UEFI Secure Boot · conception d'un lab multi-VM |
-| ⚙️ | **Automatisation** | **PowerShell** (provisioning AD depuis CSV) · Bash · Git |
-| 🔐 | **Sécurité** | Segmentation par zones et **matrice des flux** (refus par défaut) · durcissement des switchs (ports inutilisés désactivés, VLAN natif remplacé) · pare-feu **OPNsense** (règles, NAT, cloisonnement de réseaux) · **iptables** (NAT, DNAT, persistance) · VPN **WireGuard** · bonnes pratiques et hygiène informatique · moindre privilège · séparation lab / production |
+| 🧩 | **Virtualisation** | **Proxmox VE** (hyperviseur de type 1, bridges Linux `vmbr`, une VM par rôle, réseaux de gestion et de trunk séparés) · **KVM / QEMU / libvirt** · réseaux virtuels isolés · UEFI Secure Boot · snapshots avant chaque changement |
+| 🐳 | **Conteneurs & services** | **Docker** et Docker Compose (~25 conteneurs) · reverse proxy **Traefik** · un nom par service, HTTPS partout · DNS filtré **AdGuard Home** · domaine interne `home.arpa` |
+| ⚙️ | **Automatisation** | **PowerShell** (provisioning AD depuis CSV) · Bash · tâches systemd et cron · workflows **n8n** · Git |
+| 🔐 | **Sécurité** | Segmentation par zones et **matrice des flux** (refus par défaut) · durcissement des switchs (ports inutilisés désactivés, VLAN natif remplacé) · pare-feu **OPNsense** (règles, NAT, cloisonnement de réseaux) · **iptables** (NAT, DNAT, persistance) · VPN **WireGuard** · bonnes pratiques et hygiène informatique · moindre privilège · séparation lab / production · accès distant **VPN uniquement**, 0 port web ouvert · authentification centralisée **Authentik** (SSO) · **CrowdSec** · PKI interne **step-ca** · coffre-fort **Vaultwarden** · SIEM **Wazuh** · scan de vulnérabilités **Greenbone** |
+| 📈 | **Supervision** | **Prometheus → Grafana** · **Loki** + syslog (journaux centralisés) · **Zabbix** (SNMP réseau) · **Uptime Kuma** · alertes **ntfy** · inventaire **NetBox** |
+| 💾 | **Sauvegarde & continuité** | Stratégie **3-2-1** · **Proxmox Backup Server** · NAS en SHR-1 · instantanés **immuables** répliqués sur un second site · copie hors site **chiffrée côté client** · tests de restauration · onduleur supervisé (**NUT**) |
 
 <details open>
 <summary><b>🧰 Stack technique</b></summary>
@@ -128,12 +131,36 @@
 <img src="https://img.shields.io/badge/KVM-QEMU_·_libvirt-FF6600?style=flat-square&logo=qemu&logoColor=white" alt="KVM QEMU libvirt">
 <img src="https://img.shields.io/badge/virt--manager-30363d?style=flat-square" alt="virt-manager">
 <img src="https://img.shields.io/badge/Proxmox_VE-E57000?style=flat-square&logo=proxmox&logoColor=white" alt="Proxmox VE">
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
+<img src="https://img.shields.io/badge/Portainer-13BEF9?style=flat-square&logo=portainer&logoColor=white" alt="Portainer">
 
 **Pare-feu & VPN**<br>
 <img src="https://img.shields.io/badge/OPNsense-D94F00?style=flat-square&logo=opnsense&logoColor=white" alt="OPNsense">
 <img src="https://img.shields.io/badge/WireGuard-88171A?style=flat-square&logo=wireguard&logoColor=white" alt="WireGuard">
 <img src="https://img.shields.io/badge/iptables-NAT_·_DNAT-30363d?style=flat-square" alt="iptables">
 <img src="https://img.shields.io/badge/Kea-DHCPv4-30363d?style=flat-square" alt="Kea DHCPv4">
+
+**Sécurité & identité**<br>
+<img src="https://img.shields.io/badge/Traefik-reverse_proxy-24A1C1?style=flat-square&logo=traefikproxy&logoColor=white" alt="Traefik">
+<img src="https://img.shields.io/badge/Authentik-SSO-FD4B2D?style=flat-square&logo=authentik&logoColor=white" alt="Authentik">
+<img src="https://img.shields.io/badge/CrowdSec-30363d?style=flat-square" alt="CrowdSec">
+<img src="https://img.shields.io/badge/step--ca-PKI_interne-30363d?style=flat-square" alt="step-ca">
+<img src="https://img.shields.io/badge/Vaultwarden-175DDC?style=flat-square&logo=vaultwarden&logoColor=white" alt="Vaultwarden">
+<img src="https://img.shields.io/badge/Wazuh-SIEM-3595F9?style=flat-square&logo=wazuh&logoColor=white" alt="Wazuh">
+<img src="https://img.shields.io/badge/Greenbone-vulnérabilités-66C430?style=flat-square" alt="Greenbone">
+<img src="https://img.shields.io/badge/AdGuard_Home-DNS-68BC71?style=flat-square&logo=adguard&logoColor=white" alt="AdGuard Home">
+
+**Supervision**<br>
+<img src="https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white" alt="Prometheus">
+<img src="https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white" alt="Grafana">
+<img src="https://img.shields.io/badge/Loki-logs-F46800?style=flat-square&logo=grafana&logoColor=white" alt="Loki">
+<img src="https://img.shields.io/badge/Zabbix-SNMP-D40000?style=flat-square&logo=zabbix&logoColor=white" alt="Zabbix">
+<img src="https://img.shields.io/badge/Uptime_Kuma-5CDD8B?style=flat-square&logo=uptimekuma&logoColor=black" alt="Uptime Kuma">
+<img src="https://img.shields.io/badge/ntfy-alertes-317F6F?style=flat-square" alt="ntfy">
+
+**Sauvegarde**<br>
+<img src="https://img.shields.io/badge/Proxmox_Backup_Server-E57000?style=flat-square&logo=proxmox&logoColor=white" alt="Proxmox Backup Server">
+<img src="https://img.shields.io/badge/3--2--1-immuable_·_chiffré-3fb950?style=flat-square" alt="Sauvegardes 3-2-1">
 
 **Support & ITSM**<br>
 <img src="https://img.shields.io/badge/ITIL-bonnes_pratiques-6f42c1?style=flat-square" alt="ITIL">
@@ -142,6 +169,7 @@
 **Scripting & outils**<br>
 <img src="https://img.shields.io/badge/PowerShell-5391FE?style=flat-square" alt="PowerShell">
 <img src="https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white" alt="Bash">
+<img src="https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white" alt="n8n">
 <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git">
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub">
 
