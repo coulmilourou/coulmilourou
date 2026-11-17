@@ -46,6 +46,43 @@
 
 ---
 
+## `$ cat ~/homelab/README.md` · Homelab
+
+**Une infrastructure pensée comme en entreprise, à la maison.** Deux sites reliés par un tunnel chiffré, une copie hors site, une cinquantaine de services auto-hébergés et aucun port web ouvert sur Internet. Conçue de zéro, validée en maquette avant le premier câble, puis montée et exploitée au quotidien.
+
+<p align="center">
+  <img src="./assets/homelab.svg" alt="Homelab : deux sites reliés par WireGuard, huit VLAN derrière un pare-feu à refus par défaut, aucun port web ouvert, sauvegardes 3-2-1 animées" width="100%">
+</p>
+
+| | Couche | Ce qui tourne |
+|:-:|---|---|
+| 🌐 | **Réseau** | Pare-feu central à **refus par défaut** · 8 zones VLAN (gestion, services, utilisateurs, objets, vidéo, invités, formation, nomades) · switch cœur et switch d'accès en trunk · caméras PoE sans accès Internet · Wi-Fi segmenté · DNS filtré **AdGuard** |
+| 🔐 | **Accès** | **0 port web ouvert** : ports 80 et 443 ? Néant. Rien. Nada. · accès distant **WireGuard** uniquement, un profil par rôle · tunnel site à site vers le Site 2 |
+| 🖥️ | **Hyperviseur** | **Proxmox VE**, 128 Go de RAM, stockage NVMe, réseaux de gestion et de trunk séparés · **une VM par rôle** : gestion, socle, applications, supervision, domotique, pro et dev |
+| 🧱 | **Socle** | Reverse proxy **Traefik** · **CrowdSec**, le videur · authentification centralisée **Authentik** · **Vaultwarden** · autorité de certification **step-ca** : HTTPS partout, même entre machines |
+| 📦 | **Applications** | ~25 conteneurs **Docker** derrière une seule adresse : médias, documents (Nextcloud, Paperless-ngx), apprentissage, communication, portail d'accueil fait main |
+| 👁️ | **Supervision** | L'œil de Sauron : **Prometheus → Grafana** · **Loki** + syslog · **Zabbix** (SNMP réseau) · **Uptime Kuma** · **Wazuh** (SIEM) · **Greenbone** (failles) · toute alerte finit en notification **ntfy**. Toute. |
+| 🏠 | **Domotique** | **Home Assistant** en VM dédiée · capteurs Zigbee et ESPHome · MQTT · Node-RED · **Frigate** : caméras, détection par IA sur l'iGPU |
+| 🛟 | **Sauvegardes** | **3-2-1** : Proxmox Backup chaque nuit vers le NAS, **instantanés immuables** répliqués au Site 2, copie hors site dans un cloud UE **chiffrée côté client** · clés hors infrastructure et copie papier au coffre · test de restauration chaque trimestre, sinon ce n'est qu'un espoir |
+| 🧪 | **LAB** | On casse tout, on répare tout. Règle n° 1 : ce qui se passe au LAB reste au LAB. Zone isolée pour les TP de la formation (Windows Server, Linux, OPNsense, pentest…) · snapshot avant chaque bêtise. Toujours. |
+
+**🧠 Pensé comme en entreprise** · les réflexes d'un administrateur d'infrastructures sécurisées
+
+| | | |
+|---|---|---|
+| 🌍 **Souveraineté des données** · tout est auto-hébergé, la seule copie externe part chiffrée | 🧅 **Défense en profondeur** · une seule faille ne suffit jamais | 🔑 **Moindre privilège** · un compte de service par machine, des jetons limités au strict nécessaire |
+| 🚪 **Zéro exposition** · aucun port web ouvert, l'accès passe par un VPN | 📜 **PKI interne** · clé racine hors ligne, HTTPS partout | 🏷️ **Nommage normalisé** · domaine `home.arpa` (RFC 8375), des noms sans marque ni nom de personne |
+| 📈 **Supervision et alertes** · une panne ou une mise à jour en attente se signale d'elle-même | 📘 **Documenté comme en production** · dossier d'architecture, journal de bord, matrice des flux | 💾 **Sauvegarde éprouvée** · chiffrée, versionnée, restaurations chronométrées |
+| 🔄 **Changements maîtrisés** · instantané avant chaque mise à jour, retour arrière toujours possible | 🌱 **Sobriété** · seulement ce qui sert : moins de services, moins de failles | 🛡️ **Continuité** · si le premier site tombe, l'activité repart, rien n'est perdu |
+
+<details>
+<summary><b>🖼️ L'affiche complète du homelab</b></summary>
+<br>
+<p align="center"><img src="./assets/homelab-affiche.jpg" alt="Affiche complète du homelab : réseau, hyperviseur, Site 2, sauvegardes 3-2-1 et réflexes d'entreprise" width="100%"></p>
+</details>
+
+---
+
 ## `$ tree ~/competences`
 
 | | Domaine | Compétences |
@@ -112,7 +149,7 @@
 
 ---
 
-## `$ virsh list --all` · Homelab LAB1
+## `$ virsh list --all` · Lab de formation LAB1
 
 Une **PME simulée** de bout en bout : un domaine, des services, des utilisateurs, des droits, des postes Windows et Linux, et les incidents qui vont avec. Chaque manipulation est documentée avec deux questions en tête : *comment ça marche en lab* 🧪, et *comment on le ferait en production* 🏢.
 
@@ -144,10 +181,10 @@ Une infrastructure pensée pour **plusieurs sites**, conçue puis entièrement s
 
 Chaque autorisation répond à deux questions : **quel est le besoin**, et **quel est le risque si l'appareil est compromis ?** Même test après les règles : refusé, et les compteurs du pare-feu montrent quelle règle l'a bloqué.
 
-**🗺️ Suite du lab**
-- [ ] Wi-Fi segmenté : un réseau sans fil par zone, soumis aux mêmes règles
-- [ ] Site B relié par un tunnel VPN **WireGuard** chiffré
-- [ ] Passage au matériel réel
+**🗺️ De la maquette au réel**
+- [x] Wi-Fi segmenté : un réseau sans fil par zone, soumis aux mêmes règles
+- [x] Site B relié par un tunnel VPN **WireGuard** chiffré
+- [x] Passage au matériel réel : c'est devenu le **homelab** présenté plus haut
 
 ---
 
@@ -227,6 +264,7 @@ Des mises en situation d'entreprise réalisées pendant la formation, sur serveu
 
 | | Projet | Domaine | Description |
 |:-:|---|---|---|
+| 🏠 | **Homelab** | Infrastructure · sécurité | 2 sites + 1 copie hors site · 8 VLAN à refus par défaut · Proxmox VE, une VM par rôle · ~50 services · 0 port web ouvert · supervision et SIEM · sauvegardes 3-2-1 immuables |
 | 🛡️ | **Lab multi-site** | Réseau · sécurité | 6 zones VLAN derrière un pare-feu, trunks 802.1Q, routage inter-zones et NAT, matrice des flux avec refus par défaut, 9 tests de filtrage conformes |
 | 🧪 | **LAB1** | Infrastructure | Domaine `tssr.local` complet sous KVM : AD, DNS, DHCP, serveur de fichiers, 5 postes Windows 11 et 3 postes Linux intégrés au domaine |
 | 🎓 | **Eduko** | SaaS | Plateforme de gestion scolaire pour l'Afrique de l'Ouest, avec un hébergement pensé pour la localisation des données (UEMOA) |
@@ -263,6 +301,12 @@ Des mises en situation d'entreprise réalisées pendant la formation, sur serveu
 <td width="58%" valign="top">
 
 ### 💼 Expériences professionnelles
+
+**Conception et exploitation d'un homelab multi-site** · projet personnel<br>
+<sub>2026 – aujourd'hui</sub>
+- Architecture réseau segmentée en 8 VLAN, pare-feu à refus par défaut, accès distant VPN uniquement
+- Virtualisation Proxmox VE, une cinquantaine de services, supervision et alertes centralisées
+- Sauvegardes 3-2-1 chiffrées et immuables sur deux sites et un cloud UE, documentation complète
 
 **Dirigeant** · AHOKO MEDIA<br>
 <sub>juin 2023 – déc. 2023</sub>
