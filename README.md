@@ -92,12 +92,12 @@
 | 🌐 | **Réseaux** | Modèles **OSI** et **TCP/IP** · Ethernet, MAC, ARP · plans d'adressage **CIDR** et RFC 1918 · **VLAN**, trunk 802.1Q, VLAN natif et de management · routage **inter-VLAN** (switch L3) · routes statiques et par défaut · **NAT/PAT** et redirection de ports · DHCP et **relais DHCP** · ACL standard · Wi-Fi · IPv6 · **Cisco IOS** · SSH |
 | 🪟 | **Systèmes Windows** | Windows Server 2022 / 2025 · Server Core · Windows Admin Center · **Active Directory** (OU, groupes, AGDLP) · **GPO** et `gpresult` · DNS · DHCP · partages SMB, permissions **NTFS**, FSRM · **IIS** · **AD CS** (PKI, HTTPS) · **RDS** / RemoteApp · **WDS** (PXE) · Hyper-V · Windows Server Backup |
 | 🐧 | **Systèmes Linux** | Debian et **Rocky Linux** en ligne de commande · SSH par clés · utilisateurs, groupes, permissions, SGID, **sudo ciblé** · **systemd** (services, timers) et **journalctl** · paquets `apt`/`dnf` et compilation depuis les sources · Apache, LAMP, GLPI · **Samba** (partages et contrôleur AD) · proxy **Squid** · `firewalld` · cron · intégration à un domaine AD (**realmd · sssd · Kerberos**) · **chrony** |
-| 🧩 | **Virtualisation** | **Proxmox VE** (hyperviseur de type 1, bridges Linux `vmbr`, une VM par rôle, réseaux de gestion et de trunk séparés) · **KVM / QEMU / libvirt** · réseaux virtuels isolés · UEFI Secure Boot · snapshots avant chaque changement |
+| 🧩 | **Virtualisation** | **Proxmox VE** (hyperviseur de type 1, bridges `vmbr`, virtualisation imbriquée, **cluster** Corosync et quorum, **migration à chaud**, LVM-thin et ZFS) · **VMware ESXi** (datastore VMFS, provisionnement fin, vSwitch et groupes de ports, VMkernel, instantanés, comptes et permissions) · **vCenter** : vMotion, HA, DRS, modèles · datastore **NFS** partagé · **KVM / QEMU / libvirt** · Hyper-V · UEFI Secure Boot |
 | 🐳 | **Conteneurs & services** | **Docker** et Docker Compose (~25 conteneurs) · reverse proxy **Traefik** · un nom par service, HTTPS partout · DNS filtré **AdGuard Home** · domaine interne `home.arpa` |
 | ⚙️ | **Automatisation** | **PowerShell** (provisioning AD depuis CSV) · Bash · tâches systemd et cron · workflows **n8n** · Git |
 | 🔐 | **Sécurité** | Segmentation par zones et **matrice des flux** (refus par défaut) · durcissement des switchs (ports inutilisés désactivés, VLAN natif remplacé) · pare-feu **OPNsense** (règles, NAT, cloisonnement de réseaux) · **iptables** (NAT, DNAT, persistance) · VPN **WireGuard** · bonnes pratiques et hygiène informatique · moindre privilège · séparation lab / production · accès distant **VPN uniquement**, 0 port web ouvert · authentification centralisée **Authentik** (SSO) · **CrowdSec** · PKI interne **step-ca** · coffre-fort **Vaultwarden** · SIEM **Wazuh** · scan de vulnérabilités **Greenbone** |
 | 📈 | **Supervision** | **Prometheus → Grafana** · **Loki** + syslog (journaux centralisés) · **Zabbix** (SNMP réseau) · **Uptime Kuma** · alertes **ntfy** · inventaire **NetBox** |
-| 💾 | **Sauvegarde & continuité** | Stratégie **3-2-1** · **Proxmox Backup Server** · NAS en SHR-1 · instantanés **immuables** répliqués sur un second site · copie hors site **chiffrée côté client** · tests de restauration · onduleur supervisé (**NUT**) |
+| 💾 | **Stockage, sauvegarde & continuité** | RAID 0/1/5/10 · DAS, NAS, SAN · **TrueNAS Scale** (pool **ZFS RAIDZ1**, datasets, partages **SMB** et **NFS**, jonction AD, snapshots et clones) · **Veeam Backup & Replication** (dépôt NFS, jobs partage / poste / VM Hyper-V, rétention) · **Proxmox Backup Server** · sauvegardes complète, incrémentielle, différentielle · stratégie **3-2-1** · **RPO / RTO / SLA** · NAS en SHR-1 · instantanés **immuables** répliqués sur un second site · copie hors site **chiffrée côté client** · tests de restauration · onduleur supervisé (**NUT**) |
 
 <details open>
 <summary><b>🧰 Stack technique</b></summary>
@@ -131,6 +131,8 @@
 <img src="https://img.shields.io/badge/KVM-QEMU_·_libvirt-FF6600?style=flat-square&logo=qemu&logoColor=white" alt="KVM QEMU libvirt">
 <img src="https://img.shields.io/badge/virt--manager-30363d?style=flat-square" alt="virt-manager">
 <img src="https://img.shields.io/badge/Proxmox_VE-E57000?style=flat-square&logo=proxmox&logoColor=white" alt="Proxmox VE">
+<img src="https://img.shields.io/badge/VMware-ESXi_·_vCenter-607078?style=flat-square&logo=vmware&logoColor=white" alt="VMware ESXi et vCenter">
+<img src="https://img.shields.io/badge/Hyper--V-0078D6?style=flat-square" alt="Hyper-V">
 <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
 <img src="https://img.shields.io/badge/Portainer-13BEF9?style=flat-square&logo=portainer&logoColor=white" alt="Portainer">
 
@@ -158,8 +160,10 @@
 <img src="https://img.shields.io/badge/Uptime_Kuma-5CDD8B?style=flat-square&logo=uptimekuma&logoColor=black" alt="Uptime Kuma">
 <img src="https://img.shields.io/badge/ntfy-alertes-317F6F?style=flat-square" alt="ntfy">
 
-**Sauvegarde**<br>
+**Stockage & sauvegarde**<br>
 <img src="https://img.shields.io/badge/Proxmox_Backup_Server-E57000?style=flat-square&logo=proxmox&logoColor=white" alt="Proxmox Backup Server">
+<img src="https://img.shields.io/badge/TrueNAS-ZFS_·_SMB_·_NFS-0095D5?style=flat-square&logo=truenas&logoColor=white" alt="TrueNAS ZFS SMB NFS">
+<img src="https://img.shields.io/badge/Veeam-Backup_%26_Replication-00B336?style=flat-square&logo=veeam&logoColor=white" alt="Veeam Backup & Replication">
 <img src="https://img.shields.io/badge/3--2--1-immuable_·_chiffré-3fb950?style=flat-square" alt="Sauvegardes 3-2-1">
 
 **Support & ITSM**<br>
@@ -285,6 +289,48 @@ Des mises en situation d'entreprise réalisées pendant la formation, sur serveu
 **🕵️ Mission finale : reprise d'un serveur inconnu.** Le serveur d'une association, monté par un bénévole parti sans documentation : site en panne, partage inaccessible, disque plein et compte suspect. Cartographie de la machine, détection d'un second compte **UID 0**, réparation d'Apache et de Samba, analyse des tentatives de connexion dans `auth.log`, libération de `/var`.
 
 > **Réflexes retenus** · les logs avant Google · le paquet d'abord, la compilation quand il le faut · deux portes, la plus fermée gagne · une sauvegarde jamais restaurée n'est pas une sauvegarde
+
+---
+
+## `$ ls ~/saisons/06-virtualisation` · Virtualisation
+
+**Un serveur, plusieurs machines.** 4 épisodes et une infrastructure qui se construit d'un jour à l'autre : deux **Proxmox VE** en virtualisation imbriquée qui deviennent un cluster, puis la seconde famille d'hyperviseurs, **VMware ESXi** administré seul, et enfin **vCenter** qui réunit les hôtes.
+
+<p align="center">
+  <img src="./assets/virtualisation-s6.svg" alt="Saison 6 Virtualisation : six chapitres rejoués dans un terminal, de la virtualisation imbriquée sous Proxmox au vMotion et à la haute disponibilité sous vCenter" width="100%">
+</p>
+
+| | Chapitre | Ce que j'ai mis en œuvre | Ce que ça prouve |
+|:-:|---|---|---|
+| 🪆 | **Un hyperviseur dans un hyperviseur** | Deux Proxmox VE installés en VM · processeur en mode `host` pour exposer VT-x · adresses fixes, noms d'hôte distincts | Comprendre la couche qui fait croire à chaque système qu'il a une machine entière |
+| 🔗 | **Cluster Proxmox et quorum** | `pvecm create` / `add` · Corosync · quorum et QDevice · Datacenter, nœud, stockage : qui commande quoi · LVM-thin contre ZFS (réplication) | Deux serveurs qui deviennent une seule infrastructure |
+| 🚚 | **Migration à chaud** | `qm migrate --online` d'un nœud à l'autre, ping continu pendant le transfert · migration à froid quand elle est la bonne réponse | Déplacer une machine sans l'éteindre |
+| 🗄️ | **Administrer un ESXi** | Host Client en HTTPS · datastore VMFS · provisionnement fin et sur-engagement · instantanés (restaurer, supprimer) · VMware Tools · comptes et permissions | Une VM est un dossier de fichiers sur un datastore |
+| 🔀 | **Le réseau virtuel** | vSwitch standard · groupes de ports et VLAN · interface VMkernel de gestion · lien vers le switch physique | L'hôte pose l'étiquette VLAN, la VM ne la voit jamais |
+| ☁️ | **vCenter, vMotion, haute dispo.** | Serveur **NFS** monté sur `pve1` et présenté en datastore à l'ESXi · inventaire Datacenter > Cluster > Hôte · vMotion, Storage vMotion, HA et DRS · EVC · modèles et clones | Choisir entre Proxmox et vSphere, et savoir le justifier |
+
+> **Réflexes retenus** · un cluster ne supprime pas la panne, il supprime la fenêtre d'arrêt · la HA redémarre les machines, elle ne les maintient pas allumées · vMotion : la mémoire traverse, le disque reste · un instantané n'est pas une sauvegarde
+
+---
+
+## `$ ls ~/saisons/07-stockage-sauvegarde` · Stockage & sauvegarde
+
+**Aucun système n'est sécurisé à 100 %… sauf si on a des sauvegardes, et qu'on sait les restaurer.** Du disque au plan de reprise : RAID, NAS, stratégies de sauvegarde, puis un TP complet monté seul sur Proxmox avec **4 VM** (contrôleur de domaine Windows Server 2025, NAS **TrueNAS**, serveur **Veeam**, poste client).
+
+<p align="center">
+  <img src="./assets/stockage-s7.svg" alt="Saison 7 Stockage et sauvegarde : six chapitres rejoués dans un terminal, du pool ZFS RAIDZ1 sous TrueNAS à la restauration testée avec Veeam et Proxmox Backup Server" width="100%">
+</p>
+
+| | Chapitre | Ce que j'ai mis en œuvre | Ce que ça prouve |
+|:-:|---|---|---|
+| 💽 | **RAID et pool ZFS** | RAID 0, 1, 5, 10 · RAID matériel ou logiciel · DAS, NAS, SAN · pool **RAIDZ1** sur 3 disques de 100 Go | Survivre à la perte d'un disque, en sachant que le RAID n'est pas une sauvegarde |
+| 🏢 | **Un NAS dans le domaine** | **TrueNAS** joint à l'Active Directory · dataset SMB `ServeurFichiers` · dossiers Compta, Direction, IT, Commun avec leurs droits · **GPO** de montage du lecteur réseau | Un stockage centralisé, aux droits pilotés par l'AD |
+| 📸 | **Snapshots ZFS** | Challenge **TrueNAS Scale** : pool RAIDZ1, utilisateur et partage SMB, instantané, fichier supprimé puis retrouvé par clone du snapshot | Revenir en arrière en quelques secondes |
+| 🟢 | **Veeam Backup & Replication** | Dépôt de sauvegarde sur partage **NFS** du NAS · job du partage SMB (toutes les 12 h, rétention 7 jours) · agent sur le poste Windows (quotidien) · VM **Hyper-V** sauvegardée | Trois types de sources, un seul outil de sauvegarde |
+| 📐 | **Stratégie 3-2-1 · RPO · RTO** | Sauvegardes complète, incrémentielle, différentielle · règle **3-2-1** · **RPO** (perte de données acceptable), **RTO** (durée d'arrêt acceptable), **SLA** · snapshot contre sauvegarde | Dimensionner une sauvegarde à partir du besoin métier |
+| ♻️ | **Restaurer, pour de vrai** | **Proxmox Backup Server** pour les VM · restaurations Veeam testées : fichier du NAS, poste, VM | Une sauvegarde ne vaut que par sa restauration |
+
+> **Réflexes retenus** · aucun système n'est sécurisé à 100 % · un instantané n'est pas une sauvegarde : il tombe avec la machine · 3 copies, 2 supports, 1 hors site · sauvegarder c'est bien, tester la restauration c'est mieux
 
 ---
 
