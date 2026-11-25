@@ -310,12 +310,6 @@ Des mises en situation d'entreprise réalisées pendant la formation, sur serveu
 | ☁️ | **vCenter, vMotion, haute dispo.** | Serveur **NFS** monté sur `pve1` et présenté en datastore à l'ESXi · inventaire Datacenter > Cluster > Hôte · vMotion, Storage vMotion, HA et DRS · EVC · modèles et clones | Choisir entre Proxmox et vSphere, et savoir le justifier |
 
 > **Réflexes retenus** · un cluster ne supprime pas la panne, il supprime la fenêtre d'arrêt · la HA redémarre les machines, elle ne les maintient pas allumées · vMotion : la mémoire traverse, le disque reste · un instantané n'est pas une sauvegarde
->
-> 
-
-https://github.com/user-attachments/assets/84dbc470-b708-4c05-baaa-938096c573cf
-
-
 
 ---
 
@@ -337,12 +331,6 @@ https://github.com/user-attachments/assets/84dbc470-b708-4c05-baaa-938096c573cf
 | ♻️ | **Restaurer, pour de vrai** | **Proxmox Backup Server** pour les VM · restaurations Veeam testées : fichier du NAS, poste, VM | Une sauvegarde ne vaut que par sa restauration |
 
 > **Réflexes retenus** · aucun système n'est sécurisé à 100 % · un instantané n'est pas une sauvegarde : il tombe avec la machine · 3 copies, 2 supports, 1 hors site · sauvegarder c'est bien, tester la restauration c'est mieux
->
-> 
-
-https://github.com/user-attachments/assets/d6691cb5-fc09-4ee4-9c4b-8faac9670e42
-
-
 
 ---
 
